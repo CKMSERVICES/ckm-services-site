@@ -1,27 +1,22 @@
 export const siteConfig = {
   name: "CKM Services",
   shortName: "CKM",
-  tagline: "Un nettoyage commercial d'exception pour une performance optimale",
+  tagline: "Le nettoyage pro, sans la paperasse",
   description:
     "Nettoyage commercial premium, services de conciergerie et entretien de locaux pour bureaux, commerces et sites industriels. Écologique, entièrement assuré, et approuvé par des entreprises en croissance.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.ckmservices.fr",
-  phone: "+33 1 23 45 67 89",
-  phoneHref: "+33123456789",
+  phone: "06 82 56 88 44",
+  phoneHref: "+33682568844",
   email: "contact@ckmservices.fr",
   // Chiffres uniquement, indicatif pays en premier — utilisé pour le lien
   // WhatsApp gratuit (wa.me), aucune API payante requise.
-  whatsapp: "33612345678",
+  whatsapp: "33682568844",
   address: {
-    street: "Adresse à préciser",
+    street: "7 Avenue de la Liberté",
     city: "Nanterre",
     state: "",
     zip: "92000",
     country: "FR",
-  },
-  social: {
-    linkedin: "https://www.linkedin.com/company/ckm-services",
-    facebook: "https://www.facebook.com/ckmservices",
-    instagram: "https://www.instagram.com/ckmservices",
   },
   // Basés à Nanterre, on intervient dans tout Paris et sa proche périphérie.
   baseCity: "Nanterre",
@@ -74,38 +69,38 @@ export const services = [
       "Évacuation des gravats, dépoussiérage et nettoyage minutieux qui transforment un chantier en espace prêt à l'emploi, rapidement.",
   },
   {
-    slug: "desinfection-specialisee",
-    title: "Désinfection Spécialisée",
-    icon: "ShieldCheck",
+    slug: "autres-besoins",
+    title: "Autres Besoins",
+    icon: "Sparkles",
     description:
-      "Une désinfection de niveau hospitalier des surfaces à fort contact, pour les espaces médicaux et en réponse aux épidémies.",
+      "Un besoin spécifique qui ne rentre pas dans les cases ? Décrivez-nous votre situation, on adapte nos équipes et notre planning en conséquence.",
   },
 ];
 
 export const processSteps = [
   {
     step: "01",
-    title: "Consultation",
+    title: "Vous Décrivez le Besoin",
     description:
-      "Nous visitons votre site avec vous pour comprendre les flux, les priorités et les points de friction — jamais de devis standardisé.",
+      "Type de local, surface, fréquence souhaitée — par téléphone, WhatsApp ou via le formulaire, sans obligation de nous recevoir sur place.",
   },
   {
     step: "02",
-    title: "Plan Sur Mesure",
+    title: "Devis Sous 48h",
     description:
-      "Vous recevez un périmètre, un planning et une tarification transparente, adaptés à votre budget et à vos horaires d'activité.",
+      "Gratuit, clair, sans surprise. Vous savez exactement ce qui est inclus avant de vous engager.",
   },
   {
     step: "03",
-    title: "Service Impeccable",
+    title: "On Intervient",
     description:
-      "Des équipes formées et vérifiées interviennent selon une checklist détaillée, avec des produits écologiques et du matériel moderne.",
+      "Aux horaires qui vous arrangent, avec des équipes formées et du matériel adapté à votre type de site.",
   },
   {
     step: "04",
-    title: "Suivi Continu",
+    title: "Locaux Impeccables",
     description:
-      "Des audits qualité réguliers, une ligne de retour ouverte et un gestionnaire de compte dédié font grimper les standards, jamais l'inverse.",
+      "Suivi possible, sans engagement long — vous restez libre de continuer ou d'ajuster à tout moment.",
   },
 ];
 
@@ -157,4 +152,24 @@ export const premiseTypes = [
   "Éducation",
   "Hôtellerie",
   "Autre",
+];
+
+// Les 3 vraies raisons de choisir CKM (reprises des visuels de marque du
+// client) — réutilisées dans le Hero pour remplacer les stats inventées.
+export const trustPoints = [
+  {
+    icon: "BadgeCheck",
+    title: "Sans Engagement Long",
+    description: "Vous restez libre, à tout moment.",
+  },
+  {
+    icon: "Clock",
+    title: "Devis Sous 48h",
+    description: "Une réponse rapide, sans attendre.",
+  },
+  {
+    icon: "MapPin",
+    title: "Local, Dans le 92",
+    description: "Réactif, proche de chez vous.",
+  },
 ];

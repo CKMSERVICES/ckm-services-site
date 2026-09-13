@@ -25,16 +25,17 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-slate-50 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="services" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
+      <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Nos Services</span>
           <h2 className="section-heading mt-5">
             Un Programme de Nettoyage Complet, Sous Un Seul Toit.
           </h2>
-          <p className="mt-5 text-lg text-slate-600">
-            Du nettoyage quotidien de bureaux à la désinfection spécialisée,
-            chaque service est conçu autour des besoins réels de votre site.
+          <p className="mt-5 text-lg text-white/80">
+            Du nettoyage quotidien de bureaux au post-chantier, chaque
+            service est conçu autour des besoins réels de votre site.
           </p>
         </ScrollReveal>
 
@@ -55,7 +56,7 @@ export default function Services() {
                   </p>
                   <a
                     href="#quote"
-                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-gold-600 transition-colors hover:text-gold-700"
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sapphire-600 transition-colors hover:text-sapphire-800"
                   >
                     En savoir plus
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

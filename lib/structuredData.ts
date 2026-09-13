@@ -23,11 +23,6 @@ export function localBusinessSchema() {
       "@type": "City",
       name: city,
     })),
-    sameAs: [
-      siteConfig.social.linkedin,
-      siteConfig.social.facebook,
-      siteConfig.social.instagram,
-    ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 
 const quickLinks = [
@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-sapphire-950 py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           <div>
             <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-white">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400 text-sapphire-950">
@@ -31,7 +31,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-white/55">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-gold-300">
+                  <a href={link.href} className="hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -45,12 +45,12 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/55">
               <li>
-                <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-gold-300">
+                <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-white">
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-gold-300">
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
                   {siteConfig.email}
                 </a>
               </li>
@@ -59,35 +59,6 @@ export default function Footer() {
                 {siteConfig.address.city}
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">
-              Suivez-Nous
-            </h3>
-            <div className="mt-4 flex gap-3">
-              <a
-                href={siteConfig.social.linkedin}
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.social.facebook}
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.social.instagram}
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-            </div>
           </div>
         </div>
 

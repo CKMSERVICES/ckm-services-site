@@ -23,14 +23,15 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function QualityAssurance() {
   return (
-    <section id="quality" className="relative overflow-hidden bg-sapphire-50 py-24 sm:py-32">
+    <section id="quality" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
+      <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Le Standard Sparkle</span>
           <h2 className="section-heading mt-5">
             Notre Engagement pour la Qualité, la Sécurité &amp; la Durabilité.
           </h2>
-          <p className="mt-5 text-lg text-slate-600">
+          <p className="mt-5 text-lg text-white/80">
             Chaque équipe, chaque produit et chaque protocole répond à un
             standard que nous appelons Le Standard Sparkle — parce que
             « suffisamment bien » ne l&apos;est jamais.

@@ -29,15 +29,15 @@ const points = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="relative bg-white py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(200,132,31,0.05),transparent_45%)]" />
+    <section id="why-us" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
+      <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">Pourquoi Nous Choisir</span>
           <h2 className="section-heading mt-5">
             Une Propreté Inégalée &amp; une Valeur Imbattable.
           </h2>
-          <p className="mt-5 text-lg text-slate-600">
+          <p className="mt-5 text-lg text-white/80">
             Dites oui à une entreprise plus intelligente et plus propre — et à
             un partenaire qui traite vos locaux comme les siens.
           </p>

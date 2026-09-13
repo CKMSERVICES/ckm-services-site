@@ -122,22 +122,23 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="quote" className="relative bg-slate-50 py-24 sm:py-32">
+    <section id="quote" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
+      <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
       {recaptchaSiteKey && (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
           strategy="lazyOnload"
         />
       )}
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Commencer</span>
           <h2 className="section-heading mt-5">
             Prêt pour un Espace Impeccable ? Obtenez Votre Devis Gratuit !
           </h2>
-          <p className="mt-5 text-lg text-slate-600">
-            Parlez-nous de votre site et nous vous répondrons avec un plan
-            sur mesure — généralement en moins d&apos;une heure ouvrée.
+          <p className="mt-5 text-lg text-white/80">
+            Parlez-nous de votre site et recevez un devis clair sous 48h —
+            gratuit, sans surprise.
           </p>
         </ScrollReveal>
 
@@ -150,29 +151,29 @@ export default function ContactForm() {
               <div className="mt-5 space-y-4 text-sm text-slate-600">
                 <a
                   href={`tel:${siteConfig.phoneHref}`}
-                  className="flex items-center gap-3 hover:text-gold-600"
+                  className="flex items-center gap-3 hover:text-sapphire-700"
                 >
-                  <Phone className="h-5 w-5 text-gold-600" aria-hidden="true" />
+                  <Phone className="h-5 w-5 text-sapphire-600" aria-hidden="true" />
                   {siteConfig.phone}
                 </a>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 hover:text-gold-600"
+                  className="flex items-center gap-3 hover:text-sapphire-700"
                 >
-                  <Mail className="h-5 w-5 text-gold-600" aria-hidden="true" />
+                  <Mail className="h-5 w-5 text-sapphire-600" aria-hidden="true" />
                   {siteConfig.email}
                 </a>
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-gold-600"
+                  className="flex items-center gap-3 hover:text-sapphire-700"
                 >
-                  <MessageCircle className="h-5 w-5 text-gold-600" aria-hidden="true" />
+                  <MessageCircle className="h-5 w-5 text-sapphire-600" aria-hidden="true" />
                   Discuter sur WhatsApp
                 </a>
                 <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold-600" aria-hidden="true" />
+                  <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-sapphire-600" aria-hidden="true" />
                   <span>
                     {siteConfig.address.street}
                     <br />
@@ -201,7 +202,7 @@ export default function ContactForm() {
                     exit={{ opacity: 0 }}
                     className="flex flex-col items-center py-16 text-center"
                   >
-                    <CheckCircle2 className="h-14 w-14 text-gold-600" aria-hidden="true" />
+                    <CheckCircle2 className="h-14 w-14 text-sapphire-600" aria-hidden="true" />
                     <h3 className="mt-5 font-display text-xl font-semibold text-slate-900">
                       Merci ! Votre demande est bien reçue.
                     </h3>
@@ -318,11 +319,11 @@ export default function ContactForm() {
                         {services.map((service) => (
                           <label
                             key={service.slug}
-                            className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 transition-colors hover:border-gold-400"
+                            className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 transition-colors hover:border-sapphire-400"
                           >
                             <input
                               type="checkbox"
-                              className="h-4 w-4 rounded border-slate-300 bg-white text-gold-500 focus:ring-gold-400"
+                              className="h-4 w-4 rounded border-slate-300 bg-white text-sapphire-600 focus:ring-sapphire-300"
                               checked={selectedServices?.includes(service.title) ?? false}
                               onChange={() => toggleService(service.title)}
                             />
@@ -356,7 +357,7 @@ export default function ContactForm() {
                       <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="btn-primary w-full disabled:opacity-60"
+                        className="btn-solid w-full disabled:opacity-60"
                       >
                         {status === "submitting" ? (
                           <>
@@ -375,7 +376,7 @@ export default function ContactForm() {
                           Ce site est protégé par reCAPTCHA. La{" "}
                           <a
                             href="https://policies.google.com/privacy"
-                            className="underline hover:text-gold-600"
+                            className="underline hover:text-sapphire-800"
                           >
                             politique de confidentialité
                           </a>{" "}

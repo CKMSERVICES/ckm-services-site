@@ -1,0 +1,53 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
+import { processSteps } from "@/lib/constants";
+
+export default function Process() {
+  return (
+    <section id="process" className="relative bg-sapphire-950 py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
+          <span className="eyebrow">Our Process</span>
+          <h2 className="section-heading mt-5">
+            From First Call to Flawless Space.
+          </h2>
+          <p className="mt-5 text-lg text-white/65">
+            A simple, transparent journey designed to remove guesswork — and
+            deliver results you can see from day one.
+          </p>
+        </ScrollReveal>
+
+        <div className="relative mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Connecting line */}
+          <div className="pointer-events-none absolute left-0 right-0 top-8 hidden h-px lg:block" aria-hidden="true">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="h-full origin-left bg-gradient-to-r from-aqua-400/60 via-lime-400/40 to-aqua-400/10"
+            />
+          </div>
+
+          {processSteps.map((step, index) => (
+            <ScrollReveal key={step.step} delay={index * 0.12} className="relative">
+              <div className="flex flex-col items-start">
+                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-aqua-400/30 bg-sapphire-900 font-display text-xl font-bold text-aqua-300 shadow-glow">
+                  {step.step}
+                </div>
+                <h3 className="mt-5 font-display text-lg font-semibold text-white">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/65">
+                  {step.description}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

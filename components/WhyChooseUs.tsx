@@ -7,23 +7,23 @@ import GlassCard from "./GlassCard";
 const points = [
   {
     icon: Building2,
-    title: "Elevate Your Business Image",
-    body: "A spotless environment isn't just clean — it's a statement. It's the first impression your clients get, and the daily boost your team deserves. We don't just clean; we craft an atmosphere of professionalism.",
+    title: "Valorisez Votre Image d'Entreprise",
+    body: "Un environnement impeccable n'est pas seulement propre — c'est une déclaration. C'est la première impression que reçoivent vos clients, et le coup de fouet quotidien que mérite votre équipe. Nous ne nettoyons pas seulement ; nous façonnons une atmosphère de professionnalisme.",
   },
   {
     icon: Handshake,
-    title: "Experience the Difference",
-    body: "We don't just offer services; we offer solutions that save you time, reduce overhead, and project an unparalleled standard of excellence. Choose us and gain a strategic partner dedicated to your success.",
+    title: "Vivez la Différence",
+    body: "Nous ne proposons pas seulement des services ; nous proposons des solutions qui vous font gagner du temps, réduisent vos coûts et projettent un niveau d'excellence inégalé. Choisissez-nous et gagnez un partenaire stratégique dédié à votre réussite.",
   },
   {
     icon: PiggyBank,
-    title: "Beyond Clean: Financial Intelligence",
-    body: "Professional cleaning services can be a real advantage for your business. Our tailored solutions are designed to optimize your operational budget — talk to your accountant about potential tax-deductible benefits. Invest in cleanliness, invest in growth.",
+    title: "Au-Delà du Propre : Intelligence Financière",
+    body: "Des services de nettoyage professionnels peuvent être un véritable atout pour votre entreprise. Nos solutions sur mesure sont conçues pour optimiser votre budget de fonctionnement — parlez-en à votre comptable pour connaître les avantages fiscaux potentiels. Investir dans la propreté, c'est investir dans la croissance.",
   },
   {
     icon: Users,
-    title: "A Team That Defines Excellence",
-    body: "Our meticulous, fully vetted professionals are the heart of our service — artisans of hygiene, trained in the latest eco-friendly techniques. We attract the best because we are the best, and that dedication shows in every result.",
+    title: "Une Équipe qui Définit l'Excellence",
+    body: "Nos professionnels méticuleux et rigoureusement sélectionnés sont le cœur de notre service — de véritables artisans de l'hygiène, formés aux techniques écologiques les plus récentes. Nous attirons les meilleurs parce que nous sommes les meilleurs, et ce dévouement se voit dans chaque résultat.",
   },
 ];
 
@@ -33,13 +33,13 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(34,221,198,0.08),transparent_45%)]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Why Choose Us</span>
+          <span className="eyebrow">Pourquoi Nous Choisir</span>
           <h2 className="section-heading mt-5">
-            Unlock Unmatched Cleanliness &amp; Unbeatable Value.
+            Une Propreté Inégalée &amp; une Valeur Imbattable.
           </h2>
           <p className="mt-5 text-lg text-white/65">
-            Say yes to a smarter, cleaner business — and a partner that treats
-            your facility like it&apos;s their own.
+            Dites oui à une entreprise plus intelligente et plus propre — et à
+            un partenaire qui traite vos locaux comme les siens.
           </p>
         </ScrollReveal>
 

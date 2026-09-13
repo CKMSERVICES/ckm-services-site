@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/constants";
 
 const navLinks = [
   { href: "#services", label: "Services" },
-  { href: "#why-us", label: "Why Us" },
-  { href: "#process", label: "Process" },
-  { href: "#testimonials", label: "Results" },
+  { href: "#why-us", label: "Pourquoi Nous" },
+  { href: "#process", label: "Processus" },
+  { href: "#testimonials", label: "Résultats" },
   { href: "#quality", label: "Standards" },
 ];
 
@@ -68,7 +68,7 @@ export default function Header() {
             {siteConfig.phone}
           </a>
           <a href="#quote" className="btn-primary !px-5 !py-2.5 text-xs">
-            Get Free Quote
+            Devis Gratuit
           </a>
         </div>
 
@@ -76,7 +76,7 @@ export default function Header() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -108,7 +108,7 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 className="btn-primary mt-2 w-full"
               >
-                Get Free Quote
+                Devis Gratuit
               </a>
             </div>
           </motion.div>

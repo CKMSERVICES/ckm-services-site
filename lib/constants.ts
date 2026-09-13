@@ -1,73 +1,73 @@
 export const siteConfig = {
-  name: "Lumina Commercial Cleaning",
-  shortName: "Lumina",
-  tagline: "Unrivaled Commercial Cleaning for Peak Performance",
+  name: "CKM Services",
+  shortName: "CKM",
+  tagline: "Un nettoyage commercial d'exception pour une performance optimale",
   description:
-    "Premium commercial cleaning, janitorial, and facility maintenance services for offices, retail, and industrial spaces. Eco-friendly, fully insured, and trusted by growing businesses.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.luminacleaning.com",
-  phone: "+1 (555) 010-2024",
-  phoneHref: "+15550102024",
-  email: "hello@luminacleaning.com",
-  // Digits only, country code first, no "+" or spaces — used to build the
-  // free wa.me click-to-chat link (no WhatsApp API subscription required).
-  whatsapp: "15550102024",
+    "Nettoyage commercial premium, services de conciergerie et entretien de locaux pour bureaux, commerces et sites industriels. Écologique, entièrement assuré, et approuvé par des entreprises en croissance.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.ckmservices.fr",
+  phone: "+33 1 23 45 67 89",
+  phoneHref: "+33123456789",
+  email: "contact@ckmservices.fr",
+  // Chiffres uniquement, indicatif pays en premier — utilisé pour le lien
+  // WhatsApp gratuit (wa.me), aucune API payante requise.
+  whatsapp: "33612345678",
   address: {
-    street: "500 Market Street, Suite 300",
-    city: "Austin",
-    state: "TX",
-    zip: "78701",
-    country: "US",
+    street: "12 Rue de la Paix",
+    city: "Paris",
+    state: "",
+    zip: "75002",
+    country: "FR",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/lumina-cleaning",
-    facebook: "https://www.facebook.com/luminacleaning",
-    instagram: "https://www.instagram.com/luminacleaning",
+    linkedin: "https://www.linkedin.com/company/ckm-services",
+    facebook: "https://www.facebook.com/ckmservices",
+    instagram: "https://www.instagram.com/ckmservices",
   },
-  serviceAreas: ["Austin", "Dallas", "Houston", "San Antonio"],
+  serviceAreas: ["Paris", "Lyon", "Marseille", "Toulouse"],
 };
 
 export const services = [
   {
-    slug: "office-cleaning",
-    title: "Office Cleaning",
+    slug: "nettoyage-de-bureaux",
+    title: "Nettoyage de Bureaux",
     icon: "Building2",
     description:
-      "Daily, weekly, or nightly programs that keep desks, common areas, and boardrooms immaculate for every clock-in.",
+      "Des programmes quotidiens, hebdomadaires ou nocturnes qui gardent bureaux, espaces communs et salles de réunion impeccables à chaque prise de poste.",
   },
   {
-    slug: "commercial-floor-care",
-    title: "Commercial Floor Care",
+    slug: "entretien-des-sols",
+    title: "Entretien des Sols Commerciaux",
     icon: "Sparkles",
     description:
-      "Stripping, waxing, buffing, and carpet extraction that protects your flooring investment and impresses every visitor.",
+      "Décapage, cirage, lustrage et extraction de moquette qui protègent votre investissement au sol et impressionnent chaque visiteur.",
   },
   {
-    slug: "window-washing",
-    title: "Window Washing",
+    slug: "lavage-de-vitres",
+    title: "Lavage de Vitres",
     icon: "AppWindow",
     description:
-      "Streak-free interior and exterior glass, from storefronts to high-rise curtain walls, using pure-water systems.",
+      "Des vitres impeccables, intérieures et extérieures, des vitrines aux façades des immeubles, grâce à des systèmes à eau pure.",
   },
   {
-    slug: "janitorial-services",
-    title: "Janitorial Services",
+    slug: "services-de-conciergerie",
+    title: "Services de Conciergerie",
     icon: "ClipboardCheck",
     description:
-      "Fully staffed, supervised janitorial teams with custom checklists and quality audits built around your hours.",
+      "Des équipes de conciergerie formées et supervisées, avec des listes de contrôle sur mesure et des audits qualité adaptés à vos horaires.",
   },
   {
-    slug: "post-construction-cleanup",
-    title: "Post-Construction Cleanup",
+    slug: "nettoyage-post-chantier",
+    title: "Nettoyage Post-Chantier",
     icon: "HardHat",
     description:
-      "Debris removal, dust abatement, and detail cleaning that turns a job site into a move-in-ready space, fast.",
+      "Évacuation des gravats, dépoussiérage et nettoyage minutieux qui transforment un chantier en espace prêt à l'emploi, rapidement.",
   },
   {
-    slug: "specialized-disinfection",
-    title: "Specialized Disinfection",
+    slug: "desinfection-specialisee",
+    title: "Désinfection Spécialisée",
     icon: "ShieldCheck",
     description:
-      "Hospital-grade, EPA-registered disinfection for high-touch surfaces, healthcare-adjacent spaces, and outbreak response.",
+      "Une désinfection de niveau hospitalier des surfaces à fort contact, pour les espaces médicaux et en réponse aux épidémies.",
   },
 ];
 
@@ -76,74 +76,74 @@ export const processSteps = [
     step: "01",
     title: "Consultation",
     description:
-      "We walk your facility with you to understand traffic patterns, priorities, and pain points — no cookie-cutter quotes.",
+      "Nous visitons votre site avec vous pour comprendre les flux, les priorités et les points de friction — jamais de devis standardisé.",
   },
   {
     step: "02",
-    title: "Custom Plan",
+    title: "Plan Sur Mesure",
     description:
-      "You receive a tailored scope, schedule, and transparent pricing built around your budget and operating hours.",
+      "Vous recevez un périmètre, un planning et une tarification transparente, adaptés à votre budget et à vos horaires d'activité.",
   },
   {
     step: "03",
-    title: "Impeccable Service",
+    title: "Service Impeccable",
     description:
-      "Vetted, trained crews execute against a detailed checklist, using eco-friendly products and modern equipment.",
+      "Des équipes formées et vérifiées interviennent selon une checklist détaillée, avec des produits écologiques et du matériel moderne.",
   },
   {
     step: "04",
-    title: "Follow-Up",
+    title: "Suivi Continu",
     description:
-      "Ongoing quality audits, an open feedback line, and a dedicated account manager keep standards climbing, not slipping.",
+      "Des audits qualité réguliers, une ligne de retour ouverte et un gestionnaire de compte dédié font grimper les standards, jamais l'inverse.",
   },
 ];
 
 export const testimonials = [
   {
-    name: "Sarah Whitfield",
-    role: "Operations Director",
-    company: "Meridian Coworking",
+    name: "Sarah Lefèvre",
+    role: "Directrice des Opérations",
+    company: "Méridien Coworking",
     quote:
-      "Lumina transformed how our members experience the space. The lobby sparkles by 7am, every single day, and the team is genuinely invisible until you need them.",
+      "CKM Services a transformé l'expérience de nos membres. Le hall d'accueil brille dès 7h chaque matin, et l'équipe est d'une discrétion remarquable jusqu'à ce qu'on ait besoin d'elle.",
   },
   {
     name: "David Chen",
-    role: "Facilities Manager",
-    company: "Northgate Logistics",
+    role: "Responsable des Sites",
+    company: "Nord Logistique",
     quote:
-      "We switched from a national chain to Lumina and immediately noticed the difference in accountability. Their supervisor actually walks the floor with us monthly.",
+      "Nous sommes passés d'un grand groupe national à CKM Services et avons immédiatement senti la différence en termes de rigueur. Leur superviseur fait le tour des locaux avec nous chaque mois.",
   },
   {
     name: "Amina Torres",
-    role: "Practice Administrator",
-    company: "Riverside Dental Group",
+    role: "Administratrice de Cabinet",
+    company: "Cabinet Dentaire Bellevue",
     quote:
-      "Disinfection standards in a healthcare-adjacent space are non-negotiable. Lumina's protocols and documentation give us total peace of mind for every inspection.",
+      "Dans un environnement proche du médical, les standards de désinfection ne sont pas négociables. Les protocoles et la documentation de CKM Services nous offrent une tranquillité totale à chaque contrôle.",
   },
   {
-    name: "James O'Neill",
-    role: "General Manager",
-    company: "Park District Retail",
+    name: "James Moreau",
+    role: "Directeur Général",
+    company: "Parc Commercial Riverside",
     quote:
-      "Our floors have never looked better. Foot traffic is brutal in retail and their quarterly floor care program keeps us looking brand new year-round.",
+      "Nos sols n'ont jamais été aussi beaux. Le trafic piéton est intense en commerce, et leur programme trimestriel d'entretien des sols les garde comme neufs toute l'année.",
   },
 ];
 
 export const qualityBadges = [
-  { icon: "Leaf", label: "Green Seal Certified Products" },
-  { icon: "ShieldCheck", label: "OSHA Compliant Teams" },
-  { icon: "BadgeCheck", label: "Fully Insured & Bonded" },
-  { icon: "Award", label: "LEED-Aligned Practices" },
-  { icon: "Users", label: "Background-Checked Staff" },
-  { icon: "ThumbsUp", label: "100% Satisfaction Guarantee" },
+  { icon: "Leaf", label: "Produits Certifiés Écologiques" },
+  { icon: "ShieldCheck", label: "Équipes Formées Hygiène & Sécurité" },
+  { icon: "BadgeCheck", label: "Entièrement Assurés" },
+  { icon: "Award", label: "Pratiques Alignées Normes LEED" },
+  { icon: "Users", label: "Personnel Vérifié et de Confiance" },
+  { icon: "ThumbsUp", label: "Garantie Satisfaction 100%" },
 ];
 
 export const premiseTypes = [
-  "Office / Corporate",
-  "Retail",
-  "Healthcare / Medical",
-  "Industrial / Warehouse",
-  "Education",
-  "Hospitality",
-  "Other",
+  "Bureaux / Entreprise",
+  "Commerce de Détail",
+  "Santé / Médical",
+  "Industriel / Entrepôt",
+  "Éducation",
+  "Hôtellerie",
+  "Autre",
 ];

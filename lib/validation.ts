@@ -1,14 +1,14 @@
 import { z } from "zod";
 
 export const leadSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your full name."),
+  name: z.string().trim().min(2, "Merci d'indiquer votre nom complet."),
   company: z.string().trim().optional().default(""),
-  email: z.string().trim().email("Please enter a valid email address."),
+  email: z.string().trim().email("Merci d'indiquer une adresse email valide."),
   phone: z
     .string()
     .trim()
-    .min(7, "Please enter a valid phone number."),
-  premisesType: z.string().trim().min(1, "Please select a premises type."),
+    .min(7, "Merci d'indiquer un numéro de téléphone valide."),
+  premisesType: z.string().trim().min(1, "Merci de sélectionner un type de site."),
   services: z.array(z.string()).default([]),
   message: z.string().trim().optional().default(""),
   recaptchaToken: z.string().optional(),

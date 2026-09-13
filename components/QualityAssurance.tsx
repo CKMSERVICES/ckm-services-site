@@ -29,14 +29,14 @@ export default function QualityAssurance() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">The Sparkle Standard</span>
+          <span className="eyebrow">Le Standard Sparkle</span>
           <h2 className="section-heading mt-5">
-            Our Commitment to Quality, Safety &amp; Sustainability.
+            Notre Engagement pour la Qualité, la Sécurité &amp; la Durabilité.
           </h2>
           <p className="mt-5 text-lg text-white/65">
-            Every crew, every product, and every protocol is held to a
-            standard we call The Sparkle Standard — because good enough never
-            is.
+            Chaque équipe, chaque produit et chaque protocole répond à un
+            standard que nous appelons Le Standard Sparkle — parce que
+            « suffisamment bien » ne l&apos;est jamais.
           </p>
         </ScrollReveal>
 

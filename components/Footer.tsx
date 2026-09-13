@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/constants";
 
 const quickLinks = [
   { href: "#services", label: "Services" },
-  { href: "#why-us", label: "About" },
+  { href: "#why-us", label: "À Propos" },
   { href: "#quote", label: "Contact" },
 ];
 
@@ -26,7 +26,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">
-              Quick Links
+              Liens Rapides
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/55">
               {quickLinks.map((link) => (
@@ -55,15 +55,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                {siteConfig.address.street}, {siteConfig.address.city},{" "}
-                {siteConfig.address.state} {siteConfig.address.zip}
+                {siteConfig.address.street}, {siteConfig.address.zip}{" "}
+                {siteConfig.address.city}
               </li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">
-              Follow Us
+              Suivez-Nous
             </h3>
             <div className="mt-4 flex gap-3">
               <a
@@ -93,9 +93,9 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
           </p>
-          <p>Serving {siteConfig.serviceAreas.join(", ")}</p>
+          <p>Zones desservies : {siteConfig.serviceAreas.join(", ")}</p>
         </div>
       </div>
     </footer>

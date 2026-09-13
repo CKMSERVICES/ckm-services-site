@@ -48,7 +48,7 @@ export function servicesSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Commercial Cleaning Services",
+    serviceType: "Services de Nettoyage Commercial",
     provider: {
       "@type": "LocalBusiness",
       name: siteConfig.name,
@@ -57,7 +57,7 @@ export function servicesSchema() {
     areaServed: siteConfig.serviceAreas.join(", "),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Commercial Cleaning Services",
+      name: "Services de Nettoyage Commercial",
       itemListElement: services.map((service) => ({
         "@type": "Offer",
         itemOffered: {

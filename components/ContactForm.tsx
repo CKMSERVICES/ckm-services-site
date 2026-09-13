@@ -21,12 +21,12 @@ import { premiseTypes, services, siteConfig } from "@/lib/constants";
 const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 const formSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your full name."),
+  name: z.string().trim().min(2, "Merci d'indiquer votre nom complet."),
   company: z.string().trim().optional(),
-  email: z.string().trim().email("Please enter a valid email address."),
-  phone: z.string().trim().min(7, "Please enter a valid phone number."),
-  premisesType: z.string().min(1, "Please select a premises type."),
-  services: z.array(z.string()).min(1, "Please select at least one service."),
+  email: z.string().trim().email("Merci d'indiquer une adresse email valide."),
+  phone: z.string().trim().min(7, "Merci d'indiquer un numéro de téléphone valide."),
+  premisesType: z.string().min(1, "Merci de sélectionner un type de site."),
+  services: z.array(z.string()).min(1, "Merci de sélectionner au moins un service."),
   message: z.string().trim().optional(),
   website: z.string().max(0).optional(),
 });
@@ -131,13 +131,13 @@ export default function ContactForm() {
       )}
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Get Started</span>
+          <span className="eyebrow">Commencer</span>
           <h2 className="section-heading mt-5">
-            Ready for a Pristine Space? Get Your Free Quote Today!
+            Prêt pour un Espace Impeccable ? Obtenez Votre Devis Gratuit !
           </h2>
           <p className="mt-5 text-lg text-white/65">
-            Tell us about your facility and we&apos;ll respond with a custom
-            plan — usually within one business hour.
+            Parlez-nous de votre site et nous vous répondrons avec un plan
+            sur mesure — généralement en moins d&apos;une heure ouvrée.
           </p>
         </ScrollReveal>
 
@@ -145,7 +145,7 @@ export default function ContactForm() {
           <ScrollReveal direction="left" className="space-y-6">
             <div className="glass-panel p-6">
               <h3 className="font-display text-lg font-semibold text-white">
-                Talk to us directly
+                Contactez-nous directement
               </h3>
               <div className="mt-5 space-y-4 text-sm text-white/70">
                 <a
@@ -169,23 +169,23 @@ export default function ContactForm() {
                   className="flex items-center gap-3 hover:text-aqua-300"
                 >
                   <MessageCircle className="h-5 w-5 text-aqua-300" aria-hidden="true" />
-                  Chat with us on WhatsApp
+                  Discuter sur WhatsApp
                 </a>
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-aqua-300" aria-hidden="true" />
                   <span>
                     {siteConfig.address.street}
                     <br />
-                    {siteConfig.address.city}, {siteConfig.address.state}{" "}
-                    {siteConfig.address.zip}
+                    {siteConfig.address.zip} {siteConfig.address.city}
                   </span>
                 </div>
               </div>
             </div>
             <div className="glass-panel p-6">
               <p className="text-sm text-white/60">
-                We respond to every quote request via email and follow up by
-                phone or WhatsApp so nothing falls through the cracks.
+                Nous répondons à chaque demande de devis par email et
+                assurons un suivi par téléphone ou WhatsApp, pour ne rien
+                laisser passer.
               </p>
             </div>
           </ScrollReveal>
@@ -203,18 +203,19 @@ export default function ContactForm() {
                   >
                     <CheckCircle2 className="h-14 w-14 text-aqua-300" aria-hidden="true" />
                     <h3 className="mt-5 font-display text-xl font-semibold text-white">
-                      Thank you! Your request is in.
+                      Merci ! Votre demande est bien reçue.
                     </h3>
                     <p className="mt-2 max-w-sm text-sm text-white/65">
-                      A member of our team will reach out shortly with your
-                      custom quote. Keep an eye on your inbox and phone.
+                      Un membre de notre équipe vous recontactera rapidement
+                      avec votre devis personnalisé. Surveillez votre
+                      boîte mail et votre téléphone.
                     </p>
                     <button
                       type="button"
                       onClick={() => setStatus("idle")}
                       className="btn-secondary mt-8"
                     >
-                      Submit another request
+                      Envoyer une autre demande
                     </button>
                   </motion.div>
                 ) : (
@@ -227,9 +228,9 @@ export default function ContactForm() {
                     noValidate
                     className="grid grid-cols-1 gap-5 sm:grid-cols-2"
                   >
-                    {/* Honeypot — hidden from real users */}
+                    {/* Honeypot — invisible pour les vrais utilisateurs */}
                     <div className="hidden" aria-hidden="true">
-                      <label htmlFor="website">Website</label>
+                      <label htmlFor="website">Site web</label>
                       <input
                         id="website"
                         tabIndex={-1}
@@ -239,7 +240,7 @@ export default function ContactForm() {
                     </div>
 
                     <Field
-                      label="Full Name"
+                      label="Nom Complet"
                       htmlFor="name"
                       error={errors.name?.message}
                     >
@@ -253,7 +254,7 @@ export default function ContactForm() {
                     </Field>
 
                     <Field
-                      label="Company Name"
+                      label="Nom de l'Entreprise"
                       htmlFor="company"
                       error={errors.company?.message}
                     >
@@ -276,7 +277,7 @@ export default function ContactForm() {
                       />
                     </Field>
 
-                    <Field label="Phone Number" htmlFor="phone" error={errors.phone?.message}>
+                    <Field label="Téléphone" htmlFor="phone" error={errors.phone?.message}>
                       <input
                         id="phone"
                         type="tel"
@@ -287,7 +288,7 @@ export default function ContactForm() {
                     </Field>
 
                     <Field
-                      label="Type of Premises"
+                      label="Type de Site"
                       htmlFor="premisesType"
                       error={errors.premisesType?.message}
                       className="sm:col-span-2"
@@ -299,7 +300,7 @@ export default function ContactForm() {
                         {...register("premisesType")}
                       >
                         <option value="" disabled>
-                          Select premises type
+                          Sélectionnez un type de site
                         </option>
                         {premiseTypes.map((type) => (
                           <option key={type} value={type}>
@@ -311,7 +312,7 @@ export default function ContactForm() {
 
                     <fieldset className="sm:col-span-2">
                       <legend className="mb-2 block text-sm font-medium text-white/75">
-                        Desired Services
+                        Services Souhaités
                       </legend>
                       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                         {services.map((service) => (
@@ -346,7 +347,7 @@ export default function ContactForm() {
                         id="message"
                         rows={4}
                         className="form-input resize-none"
-                        placeholder="Tell us about your space, schedule, or specific needs..."
+                        placeholder="Parlez-nous de votre espace, de vos horaires ou de vos besoins spécifiques..."
                         {...register("message")}
                       />
                     </Field>
@@ -360,31 +361,31 @@ export default function ContactForm() {
                         {status === "submitting" ? (
                           <>
                             <Loader2 className="h-4 w-4 animate-spin" />
-                            Sending...
+                            Envoi en cours...
                           </>
                         ) : (
                           <>
-                            Get My Free Quote
+                            Obtenir Mon Devis Gratuit
                             <Send className="h-4 w-4" aria-hidden="true" />
                           </>
                         )}
                       </button>
                       {recaptchaSiteKey && (
                         <p className="mt-3 text-center text-xs text-white/40">
-                          This site is protected by reCAPTCHA and the Google{" "}
+                          Ce site est protégé par reCAPTCHA. La{" "}
                           <a
                             href="https://policies.google.com/privacy"
                             className="underline hover:text-aqua-300"
                           >
-                            Privacy Policy
+                            politique de confidentialité
                           </a>{" "}
-                          applies.
+                          de Google s&apos;applique.
                         </p>
                       )}
                       {status === "error" && (
                         <p className="mt-3 text-center text-sm text-red-300">
-                          Something went wrong. Please try again or call us
-                          directly at {siteConfig.phone}.
+                          Une erreur est survenue. Merci de réessayer ou de
+                          nous appeler directement au {siteConfig.phone}.
                         </p>
                       )}
                     </div>

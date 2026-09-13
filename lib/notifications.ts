@@ -9,12 +9,12 @@ const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 function leadEmailHtml(lead: LeadPayload) {
   const rows: [string, string][] = [
-    ["Name", lead.name],
-    ["Company", lead.company || "—"],
+    ["Nom", lead.name],
+    ["Entreprise", lead.company || "—"],
     ["Email", lead.email],
-    ["Phone", lead.phone],
-    ["Premises type", lead.premisesType],
-    ["Services requested", lead.services.join(", ") || "—"],
+    ["Téléphone", lead.phone],
+    ["Type de site", lead.premisesType],
+    ["Services demandés", lead.services.join(", ") || "—"],
     ["Message", lead.message || "—"],
   ];
 
@@ -31,8 +31,8 @@ function leadEmailHtml(lead: LeadPayload) {
   <div style="font-family:Arial,sans-serif;background:#eef2fb;padding:24px;">
     <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #d6e0f5;">
       <div style="background:linear-gradient(135deg,#0b1730,#10615a);padding:20px 24px;">
-        <h1 style="color:#ffffff;margin:0;font-size:18px;">New Quote Request</h1>
-        <p style="color:#93fbe9;margin:4px 0 0;font-size:13px;">Lumina Commercial Cleaning — website lead</p>
+        <h1 style="color:#ffffff;margin:0;font-size:18px;">Nouvelle Demande de Devis</h1>
+        <p style="color:#93fbe9;margin:4px 0 0;font-size:13px;">CKM Services — lead du site web</p>
       </div>
       <table style="width:100%;border-collapse:collapse;">${rowsHtml}</table>
     </div>
@@ -55,17 +55,16 @@ export async function sendLeadEmail(lead: LeadPayload) {
     return { skipped: true };
   }
 
-  const from = process.env.LEAD_FROM_EMAIL || "leads@luminacleaning.com";
-  const to = process.env.LEAD_TO_EMAIL || "sales@luminacleaning.com";
+  const from = process.env.LEAD_FROM_EMAIL || "leads@ckmservices.fr";
+  const to = process.env.LEAD_TO_EMAIL || "contact@ckmservices.fr";
 
   return resend.emails.send({
-    from: `Lumina Website <${from}>`,
+    from: `Site CKM Services <${from}>`,
     to,
     replyTo: lead.email,
-    subject: `New quote request from ${lead.name}${
+    subject: `Nouvelle demande de devis de ${lead.name}${
       lead.company ? ` (${lead.company})` : ""
     }`,
     html: leadEmailHtml(lead),
   });
 }
-

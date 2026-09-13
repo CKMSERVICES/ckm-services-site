@@ -53,7 +53,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="eyebrow"
           >
-            Premium Commercial Cleaning
+            Nettoyage Commercial Premium
           </motion.span>
 
           <motion.h1
@@ -62,11 +62,11 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Transform Your Workspace:{" "}
+            Transformez Votre Espace de Travail :{" "}
             <span className="bg-gradient-to-r from-aqua-300 to-lime-300 bg-clip-text text-transparent">
-              Unrivaled Commercial Cleaning
+              Un Nettoyage Commercial d&apos;Exception
             </span>{" "}
-            for Peak Performance.
+            pour une Performance Optimale.
           </motion.h1>
 
           <motion.p
@@ -75,9 +75,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 max-w-xl text-balance text-lg text-white/70"
           >
-            From corporate offices to industrial facilities, {siteConfig.shortName}{" "}
-            delivers meticulous, eco-friendly cleaning programs that protect your
-            brand, your team, and your bottom line — every single day.
+            Des bureaux d&apos;entreprise aux sites industriels, {siteConfig.shortName}{" "}
+            propose des programmes de nettoyage méticuleux et écologiques qui
+            protègent votre image, vos équipes et votre rentabilité — chaque jour.
           </motion.p>
 
           <motion.div
@@ -87,11 +87,11 @@ export default function Hero() {
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
             <a href="#quote" className="btn-primary">
-              Get Your Free Custom Quote
+              Obtenez Votre Devis Gratuit
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a href="#services" className="btn-secondary">
-              Explore Our Services
+              Découvrir Nos Services
             </a>
           </motion.div>
 
@@ -103,7 +103,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-aqua-300" aria-hidden="true" />
-              Fully Insured &amp; Bonded
+              Entièrement Assurés
             </div>
             <div className="flex items-center gap-2">
               <div className="flex" aria-hidden="true">
@@ -111,7 +111,7 @@ export default function Hero() {
                   <Star key={i} className="h-4 w-4 fill-lime-300 text-lime-300" />
                 ))}
               </div>
-              Rated 4.9/5 by facility managers
+              Noté 4,9/5 par les gestionnaires de sites
             </div>
           </motion.div>
         </div>
@@ -133,9 +133,9 @@ export default function Hero() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-white">
-                      98% Client Retention
+                      98% de Fidélisation Client
                     </p>
-                    <p className="text-xs text-white/60">Trusted year after year</p>
+                    <p className="text-xs text-white/60">Une confiance qui dure</p>
                   </div>
                 </div>
                 <div className="glass-panel flex items-center gap-3 p-4">
@@ -144,9 +144,9 @@ export default function Hero() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-white">
-                      Eco-Certified Products
+                      Produits Éco-Certifiés
                     </p>
-                    <p className="text-xs text-white/60">Safe for your team & planet</p>
+                    <p className="text-xs text-white/60">Sûrs pour vos équipes et la planète</p>
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function Hero() {
             className="glass-panel absolute -left-6 -top-6 hidden w-44 p-4 sm:block"
           >
             <p className="text-2xl font-bold text-aqua-300">500+</p>
-            <p className="text-xs text-white/60">Facilities serviced daily</p>
+            <p className="text-xs text-white/60">Sites entretenus chaque jour</p>
           </motion.div>
         </motion.div>
       </div>

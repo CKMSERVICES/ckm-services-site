@@ -31,8 +31,8 @@ export default function Testimonials() {
     <section id="testimonials" className="relative bg-sapphire-900/40 py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Client Success</span>
-          <h2 className="section-heading mt-5">Results That Speak For Themselves.</h2>
+          <span className="eyebrow">Succès Clients</span>
+          <h2 className="section-heading mt-5">Des Résultats Qui Parlent d&apos;Eux-Mêmes.</h2>
         </ScrollReveal>
 
         <div
@@ -43,7 +43,7 @@ export default function Testimonials() {
           onBlur={() => setPaused(false)}
           role="region"
           aria-roledescription="carousel"
-          aria-label="Client testimonials"
+          aria-label="Témoignages clients"
         >
           <div className="glass-panel relative overflow-hidden p-8 shadow-glow sm:p-12">
             <Quote className="h-10 w-10 text-aqua-400/40" aria-hidden="true" />
@@ -84,7 +84,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={prev}
-              aria-label="Previous testimonial"
+              aria-label="Témoignage précédent"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-aqua-400/50 hover:text-aqua-300"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -96,7 +96,7 @@ export default function Testimonials() {
                   key={t.name}
                   type="button"
                   onClick={() => setIndex(i)}
-                  aria-label={`Show testimonial from ${t.name}`}
+                  aria-label={`Afficher le témoignage de ${t.name}`}
                   aria-current={i === index}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === index ? "w-6 bg-aqua-400" : "w-2 bg-white/25"
@@ -108,7 +108,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={next}
-              aria-label="Next testimonial"
+              aria-label="Témoignage suivant"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-aqua-400/50 hover:text-aqua-300"
             >
               <ChevronRight className="h-5 w-5" />

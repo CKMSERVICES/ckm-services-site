@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/constants";
 
 const message = encodeURIComponent(
-  `Hi ${siteConfig.shortName}! I'd like a free quote for commercial cleaning.`
+  `Bonjour ${siteConfig.shortName} ! J'aimerais obtenir un devis gratuit pour un nettoyage commercial.`
 );
 
 export default function WhatsAppButton() {
@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/${siteConfig.whatsapp}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Chat with ${siteConfig.shortName} on WhatsApp`}
+      aria-label={`Discuter avec ${siteConfig.shortName} sur WhatsApp`}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1, duration: 0.4 }}

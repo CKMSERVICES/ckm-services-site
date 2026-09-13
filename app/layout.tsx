@@ -30,23 +30,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Premium Commercial Cleaning Services`,
+    default: `${siteConfig.name} | Nettoyage Commercial Premium`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "commercial cleaning",
-    "office cleaning",
-    "janitorial services",
-    "facility maintenance",
-    "professional cleaners",
-    "green cleaning",
-    "eco-friendly cleaning",
-    "commercial property cleaning",
-    "business cleaning services",
-    "post-construction cleaning",
-    "disinfection services",
-    "local cleaning company",
+    "nettoyage commercial",
+    "nettoyage de bureaux",
+    "services de conciergerie",
+    "entretien de locaux",
+    "nettoyeurs professionnels",
+    "nettoyage écologique",
+    "nettoyage de propriété commerciale",
+    "services de nettoyage pour entreprises",
+    "nettoyage post-chantier",
+    "services de désinfection",
+    "entreprise de nettoyage locale",
+    "nettoyage fiable",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "fr_FR",
     url: siteConfig.url,
-    title: `${siteConfig.name} | Premium Commercial Cleaning Services`,
+    title: `${siteConfig.name} | Nettoyage Commercial Premium`,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Premium Commercial Cleaning Services`,
+    title: `${siteConfig.name} | Nettoyage Commercial Premium`,
     description: siteConfig.description,
     images: ["/og-image.jpg"],
   },
@@ -93,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${jakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -111,7 +111,7 @@ export default function RootLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10000] focus:rounded-lg focus:bg-aqua-400 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-sapphire-950"
         >
-          Skip to main content
+          Aller au contenu principal
         </a>
         <WaterDropEffect />
         {children}

@@ -9,13 +9,13 @@ export default function Process() {
     <section id="process" className="relative bg-sapphire-950 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Our Process</span>
+          <span className="eyebrow">Notre Processus</span>
           <h2 className="section-heading mt-5">
-            From First Call to Flawless Space.
+            Du Premier Appel à un Espace Impeccable.
           </h2>
           <p className="mt-5 text-lg text-white/65">
-            A simple, transparent journey designed to remove guesswork — and
-            deliver results you can see from day one.
+            Un parcours simple et transparent, pensé pour éliminer les zones
+            d&apos;ombre — et livrer des résultats visibles dès le premier jour.
           </p>
         </ScrollReveal>
 

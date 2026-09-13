@@ -28,7 +28,7 @@ export default function Testimonials() {
   const active = testimonials[index];
 
   return (
-    <section id="testimonials" className="relative bg-sapphire-900/40 py-24 sm:py-32">
+    <section id="testimonials" className="relative bg-slate-50 py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Succès Clients</span>
@@ -45,8 +45,8 @@ export default function Testimonials() {
           aria-roledescription="carousel"
           aria-label="Témoignages clients"
         >
-          <div className="glass-panel relative overflow-hidden p-8 shadow-glow sm:p-12">
-            <Quote className="h-10 w-10 text-aqua-400/40" aria-hidden="true" />
+          <div className="glass-panel relative overflow-hidden p-8 sm:p-12">
+            <Quote className="h-10 w-10 text-gold-300" aria-hidden="true" />
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={active.name}
@@ -56,13 +56,13 @@ export default function Testimonials() {
                 transition={{ duration: 0.4 }}
                 aria-live="polite"
               >
-                <p className="mt-4 text-balance text-lg leading-relaxed text-white/85 sm:text-xl">
+                <p className="mt-4 text-balance text-lg leading-relaxed text-slate-800 sm:text-xl">
                   &ldquo;{active.quote}&rdquo;
                 </p>
                 <footer className="mt-6 flex items-center gap-3">
                   <div
                     aria-hidden="true"
-                    className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-aqua-400 to-lime-400 font-display text-sm font-bold text-sapphire-950"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-sapphire-700 font-display text-sm font-bold text-white"
                   >
                     {active.name
                       .split(" ")
@@ -70,8 +70,8 @@ export default function Testimonials() {
                       .join("")}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">{active.name}</p>
-                    <p className="text-xs text-white/55">
+                    <p className="text-sm font-semibold text-slate-900">{active.name}</p>
+                    <p className="text-xs text-slate-500">
                       {active.role}, {active.company}
                     </p>
                   </div>
@@ -85,7 +85,7 @@ export default function Testimonials() {
               type="button"
               onClick={prev}
               aria-label="Témoignage précédent"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-aqua-400/50 hover:text-aqua-300"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-500 transition-colors hover:border-gold-400 hover:text-gold-600"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -99,7 +99,7 @@ export default function Testimonials() {
                   aria-label={`Afficher le témoignage de ${t.name}`}
                   aria-current={i === index}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    i === index ? "w-6 bg-aqua-400" : "w-2 bg-white/25"
+                    i === index ? "w-6 bg-gold-500" : "w-2 bg-slate-300"
                   }`}
                 />
               ))}
@@ -109,7 +109,7 @@ export default function Testimonials() {
               type="button"
               onClick={next}
               aria-label="Témoignage suivant"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-aqua-400/50 hover:text-aqua-300"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-500 transition-colors hover:border-gold-400 hover:text-gold-600"
             >
               <ChevronRight className="h-5 w-5" />
             </button>

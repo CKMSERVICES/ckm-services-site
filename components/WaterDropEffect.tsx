@@ -56,8 +56,8 @@ export default function WaterDropEffect() {
               marginTop: -45,
               borderRadius: "9999px",
               background:
-                "radial-gradient(circle, rgba(34,221,198,0.55) 0%, rgba(157,232,37,0.25) 45%, rgba(34,221,198,0) 70%)",
-              border: "1px solid rgba(147,251,233,0.6)",
+                "radial-gradient(circle, rgba(223,163,46,0.5) 0%, rgba(28,63,61,0.2) 45%, rgba(223,163,46,0) 70%)",
+              border: "1px solid rgba(223,163,46,0.5)",
             }}
           />
         ))}

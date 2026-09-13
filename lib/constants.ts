@@ -12,10 +12,10 @@ export const siteConfig = {
   // WhatsApp gratuit (wa.me), aucune API payante requise.
   whatsapp: "33612345678",
   address: {
-    street: "12 Rue de la Paix",
-    city: "Paris",
+    street: "Adresse à préciser",
+    city: "Nanterre",
     state: "",
-    zip: "75002",
+    zip: "92000",
     country: "FR",
   },
   social: {
@@ -23,7 +23,18 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/ckmservices",
     instagram: "https://www.instagram.com/ckmservices",
   },
-  serviceAreas: ["Paris", "Lyon", "Marseille", "Toulouse"],
+  // Basés à Nanterre, on intervient dans tout Paris et sa proche périphérie.
+  baseCity: "Nanterre",
+  serviceAreas: [
+    "Nanterre",
+    "Paris",
+    "Courbevoie",
+    "Puteaux",
+    "La Défense",
+    "Boulogne-Billancourt",
+    "Levallois-Perret",
+    "Colombes",
+  ],
 };
 
 export const services = [

@@ -29,15 +29,15 @@ const points = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="relative bg-sapphire-950 py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(34,221,198,0.08),transparent_45%)]" />
+    <section id="why-us" className="relative bg-white py-24 sm:py-32">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(200,132,31,0.05),transparent_45%)]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">Pourquoi Nous Choisir</span>
           <h2 className="section-heading mt-5">
             Une Propreté Inégalée &amp; une Valeur Imbattable.
           </h2>
-          <p className="mt-5 text-lg text-white/65">
+          <p className="mt-5 text-lg text-slate-600">
             Dites oui à une entreprise plus intelligente et plus propre — et à
             un partenaire qui traite vos locaux comme les siens.
           </p>
@@ -47,13 +47,13 @@ export default function WhyChooseUs() {
           {points.map((point, index) => (
             <ScrollReveal key={point.title} delay={index * 0.1} direction={index % 2 === 0 ? "left" : "right"}>
               <GlassCard className="group h-full">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-aqua-400/20 to-lime-400/20 text-aqua-300">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sapphire-50 text-sapphire-600">
                   <point.icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                <h3 className="mt-5 font-display text-xl font-semibold text-slate-900">
                   {point.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
                   {point.body}
                 </p>
               </GlassCard>

@@ -41,7 +41,7 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
       >
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-white">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-aqua-400 to-lime-400 text-sapphire-950">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400 text-sapphire-950">
             <Sparkles className="h-5 w-5" aria-hidden="true" />
           </span>
           {siteConfig.shortName}
@@ -52,7 +52,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/75 transition-colors hover:text-aqua-300"
+              className="text-sm font-medium text-white/75 transition-colors hover:text-gold-300"
             >
               {link.label}
             </a>
@@ -62,7 +62,7 @@ export default function Header() {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href={`tel:${siteConfig.phoneHref}`}
-            className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-aqua-300"
+            className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-gold-300"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {siteConfig.phone}

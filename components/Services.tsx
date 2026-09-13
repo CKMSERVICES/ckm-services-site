@@ -25,14 +25,14 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-sapphire-900/40 py-24 sm:py-32">
+    <section id="services" className="relative bg-slate-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Nos Services</span>
           <h2 className="section-heading mt-5">
             Un Programme de Nettoyage Complet, Sous Un Seul Toit.
           </h2>
-          <p className="mt-5 text-lg text-white/65">
+          <p className="mt-5 text-lg text-slate-600">
             Du nettoyage quotidien de bureaux à la désinfection spécialisée,
             chaque service est conçu autour des besoins réels de votre site.
           </p>
@@ -44,18 +44,18 @@ export default function Services() {
             return (
               <ScrollReveal key={service.slug} delay={(index % 3) * 0.1}>
                 <GlassCard className="group flex h-full flex-col">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-aqua-400/20 to-lime-400/20 text-aqua-300 transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sapphire-50 text-sapphire-600 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-white">
+                  <h3 className="mt-5 font-display text-lg font-semibold text-slate-900">
                     {service.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                     {service.description}
                   </p>
                   <a
                     href="#quote"
-                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-aqua-300 transition-colors hover:text-lime-300"
+                    className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-gold-600 transition-colors hover:text-gold-700"
                   >
                     En savoir plus
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

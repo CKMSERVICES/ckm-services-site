@@ -122,7 +122,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="quote" className="relative bg-sapphire-950 py-24 sm:py-32">
+    <section id="quote" className="relative bg-slate-50 py-24 sm:py-32">
       {recaptchaSiteKey && (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
@@ -135,7 +135,7 @@ export default function ContactForm() {
           <h2 className="section-heading mt-5">
             Prêt pour un Espace Impeccable ? Obtenez Votre Devis Gratuit !
           </h2>
-          <p className="mt-5 text-lg text-white/65">
+          <p className="mt-5 text-lg text-slate-600">
             Parlez-nous de votre site et nous vous répondrons avec un plan
             sur mesure — généralement en moins d&apos;une heure ouvrée.
           </p>
@@ -144,35 +144,35 @@ export default function ContactForm() {
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[1fr,1.3fr]">
           <ScrollReveal direction="left" className="space-y-6">
             <div className="glass-panel p-6">
-              <h3 className="font-display text-lg font-semibold text-white">
+              <h3 className="font-display text-lg font-semibold text-slate-900">
                 Contactez-nous directement
               </h3>
-              <div className="mt-5 space-y-4 text-sm text-white/70">
+              <div className="mt-5 space-y-4 text-sm text-slate-600">
                 <a
                   href={`tel:${siteConfig.phoneHref}`}
-                  className="flex items-center gap-3 hover:text-aqua-300"
+                  className="flex items-center gap-3 hover:text-gold-600"
                 >
-                  <Phone className="h-5 w-5 text-aqua-300" aria-hidden="true" />
+                  <Phone className="h-5 w-5 text-gold-600" aria-hidden="true" />
                   {siteConfig.phone}
                 </a>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 hover:text-aqua-300"
+                  className="flex items-center gap-3 hover:text-gold-600"
                 >
-                  <Mail className="h-5 w-5 text-aqua-300" aria-hidden="true" />
+                  <Mail className="h-5 w-5 text-gold-600" aria-hidden="true" />
                   {siteConfig.email}
                 </a>
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-aqua-300"
+                  className="flex items-center gap-3 hover:text-gold-600"
                 >
-                  <MessageCircle className="h-5 w-5 text-aqua-300" aria-hidden="true" />
+                  <MessageCircle className="h-5 w-5 text-gold-600" aria-hidden="true" />
                   Discuter sur WhatsApp
                 </a>
                 <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-aqua-300" aria-hidden="true" />
+                  <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold-600" aria-hidden="true" />
                   <span>
                     {siteConfig.address.street}
                     <br />
@@ -182,7 +182,7 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="glass-panel p-6">
-              <p className="text-sm text-white/60">
+              <p className="text-sm text-slate-500">
                 Nous répondons à chaque demande de devis par email et
                 assurons un suivi par téléphone ou WhatsApp, pour ne rien
                 laisser passer.
@@ -201,11 +201,11 @@ export default function ContactForm() {
                     exit={{ opacity: 0 }}
                     className="flex flex-col items-center py-16 text-center"
                   >
-                    <CheckCircle2 className="h-14 w-14 text-aqua-300" aria-hidden="true" />
-                    <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                    <CheckCircle2 className="h-14 w-14 text-gold-600" aria-hidden="true" />
+                    <h3 className="mt-5 font-display text-xl font-semibold text-slate-900">
                       Merci ! Votre demande est bien reçue.
                     </h3>
-                    <p className="mt-2 max-w-sm text-sm text-white/65">
+                    <p className="mt-2 max-w-sm text-sm text-slate-600">
                       Un membre de notre équipe vous recontactera rapidement
                       avec votre devis personnalisé. Surveillez votre
                       boîte mail et votre téléphone.
@@ -311,18 +311,18 @@ export default function ContactForm() {
                     </Field>
 
                     <fieldset className="sm:col-span-2">
-                      <legend className="mb-2 block text-sm font-medium text-white/75">
+                      <legend className="mb-2 block text-sm font-medium text-slate-700">
                         Services Souhaités
                       </legend>
                       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                         {services.map((service) => (
                           <label
                             key={service.slug}
-                            className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-sm text-white/75 transition-colors hover:border-aqua-400/40"
+                            className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 transition-colors hover:border-gold-400"
                           >
                             <input
                               type="checkbox"
-                              className="h-4 w-4 rounded border-white/30 bg-transparent text-aqua-400 focus:ring-aqua-400"
+                              className="h-4 w-4 rounded border-slate-300 bg-white text-gold-500 focus:ring-gold-400"
                               checked={selectedServices?.includes(service.title) ?? false}
                               onChange={() => toggleService(service.title)}
                             />
@@ -331,7 +331,7 @@ export default function ContactForm() {
                         ))}
                       </div>
                       {errors.services && (
-                        <p className="mt-2 text-xs text-red-300">
+                        <p className="mt-2 text-xs text-red-600">
                           {errors.services.message as string}
                         </p>
                       )}
@@ -371,11 +371,11 @@ export default function ContactForm() {
                         )}
                       </button>
                       {recaptchaSiteKey && (
-                        <p className="mt-3 text-center text-xs text-white/40">
+                        <p className="mt-3 text-center text-xs text-slate-400">
                           Ce site est protégé par reCAPTCHA. La{" "}
                           <a
                             href="https://policies.google.com/privacy"
-                            className="underline hover:text-aqua-300"
+                            className="underline hover:text-gold-600"
                           >
                             politique de confidentialité
                           </a>{" "}
@@ -383,7 +383,7 @@ export default function ContactForm() {
                         </p>
                       )}
                       {status === "error" && (
-                        <p className="mt-3 text-center text-sm text-red-300">
+                        <p className="mt-3 text-center text-sm text-red-600">
                           Une erreur est survenue. Merci de réessayer ou de
                           nous appeler directement au {siteConfig.phone}.
                         </p>
@@ -415,11 +415,11 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-medium text-white/75">
+      <label htmlFor={htmlFor} className="mb-1.5 block text-sm font-medium text-slate-700">
         {label}
       </label>
       {children}
-      {error && <p className="mt-1.5 text-xs text-red-300">{error}</p>}
+      {error && <p className="mt-1.5 text-xs text-red-600">{error}</p>}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowRight, MapPin, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
       />
       <motion.div
         aria-hidden="true"
-        className="absolute -right-16 top-1/3 h-96 w-96 rounded-full bg-lime-400/10 blur-3xl"
+        className="absolute -right-16 top-1/3 h-96 w-96 rounded-full bg-gold-400/10 blur-3xl"
         animate={{ y: [0, 24, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -38,7 +38,7 @@ export default function Hero() {
         <span
           key={i}
           aria-hidden="true"
-          className="absolute animate-sparkle text-aqua-300/70"
+          className="absolute animate-sparkle text-gold-300/70"
           style={{ top: pos.top, left: pos.left, animationDelay: `${pos.delay}s` }}
         >
           <Sparkles className="h-4 w-4" />
@@ -51,9 +51,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="eyebrow"
+            className="eyebrow-dark inline-flex items-center gap-1.5"
           >
-            Nettoyage Commercial Premium
+            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+            Basés à {siteConfig.baseCity} — intervention Paris & Île-de-France
           </motion.span>
 
           <motion.h1
@@ -63,7 +64,7 @@ export default function Hero() {
             className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             Transformez Votre Espace de Travail :{" "}
-            <span className="bg-gradient-to-r from-aqua-300 to-lime-300 bg-clip-text text-transparent">
+            <span className="text-gold-300">
               Un Nettoyage Commercial d&apos;Exception
             </span>{" "}
             pour une Performance Optimale.
@@ -90,7 +91,7 @@ export default function Hero() {
               Obtenez Votre Devis Gratuit
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
-            <a href="#services" className="btn-secondary">
+            <a href="#services" className="btn-secondary-dark">
               Découvrir Nos Services
             </a>
           </motion.div>
@@ -102,13 +103,13 @@ export default function Hero() {
             className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/60"
           >
             <div className="flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-aqua-300" aria-hidden="true" />
+              <ShieldCheck className="h-5 w-5 text-gold-300" aria-hidden="true" />
               Entièrement Assurés
             </div>
             <div className="flex items-center gap-2">
               <div className="flex" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-lime-300 text-lime-300" />
+                  <Star key={i} className="h-4 w-4 fill-gold-300 text-gold-300" />
                 ))}
               </div>
               Noté 4,9/5 par les gestionnaires de sites
@@ -123,12 +124,12 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="glass-panel relative aspect-[4/5] overflow-hidden p-1">
+          <div className="panel-dark relative aspect-[4/5] overflow-hidden p-1">
             <div className="relative h-full w-full overflow-hidden rounded-xl bg-gradient-to-br from-sapphire-800 via-sapphire-900 to-aqua-900/40">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,251,233,0.25),transparent_55%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(223,163,46,0.18),transparent_55%)]" />
               <div className="absolute inset-0 flex flex-col justify-end gap-4 p-6">
-                <div className="glass-panel flex items-center gap-3 p-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-aqua-400/20 text-aqua-300">
+                <div className="panel-dark flex items-center gap-3 p-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-400/20 text-gold-300">
                     <Sparkles className="h-5 w-5" />
                   </span>
                   <div>
@@ -138,8 +139,8 @@ export default function Hero() {
                     <p className="text-xs text-white/60">Une confiance qui dure</p>
                   </div>
                 </div>
-                <div className="glass-panel flex items-center gap-3 p-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-lime-400/20 text-lime-300">
+                <div className="panel-dark flex items-center gap-3 p-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-aqua-400/20 text-aqua-300">
                     <ShieldCheck className="h-5 w-5" />
                   </span>
                   <div>
@@ -157,9 +158,9 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="glass-panel absolute -left-6 -top-6 hidden w-44 p-4 sm:block"
+            className="panel-dark absolute -left-6 -top-6 hidden w-44 p-4 sm:block"
           >
-            <p className="text-2xl font-bold text-aqua-300">500+</p>
+            <p className="text-2xl font-bold text-gold-300">500+</p>
             <p className="text-xs text-white/60">Sites entretenus chaque jour</p>
           </motion.div>
         </motion.div>

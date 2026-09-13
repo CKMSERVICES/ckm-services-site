@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-white">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-aqua-400 to-lime-400 text-sapphire-950">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400 text-sapphire-950">
                 <Sparkles className="h-5 w-5" aria-hidden="true" />
               </span>
               {siteConfig.shortName}
@@ -31,7 +31,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-white/55">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-aqua-300">
+                  <a href={link.href} className="hover:text-gold-300">
                     {link.label}
                   </a>
                 </li>
@@ -45,12 +45,12 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/55">
               <li>
-                <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-aqua-300">
+                <a href={`tel:${siteConfig.phoneHref}`} className="hover:text-gold-300">
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-aqua-300">
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-gold-300">
                   {siteConfig.email}
                 </a>
               </li>
@@ -69,21 +69,21 @@ export default function Footer() {
               <a
                 href={siteConfig.social.linkedin}
                 aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-aqua-400/50 hover:text-aqua-300"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href={siteConfig.social.facebook}
                 aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-aqua-400/50 hover:text-aqua-300"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
                 href={siteConfig.social.instagram}
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-aqua-400/50 hover:text-aqua-300"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:border-gold-400/50 hover:text-gold-300"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -95,7 +95,10 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
           </p>
-          <p>Zones desservies : {siteConfig.serviceAreas.join(", ")}</p>
+          <p>
+            Basés à {siteConfig.baseCity} — intervention dans toute la
+            région parisienne
+          </p>
         </div>
       </div>
     </footer>

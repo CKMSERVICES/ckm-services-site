@@ -56,7 +56,7 @@ export async function sendLeadEmail(lead: LeadPayload) {
   }
 
   const from = process.env.LEAD_FROM_EMAIL || "leads@ckmservices.fr";
-  const to = process.env.LEAD_TO_EMAIL || "contact@ckmservices.fr";
+  const to = process.env.LEAD_TO_EMAIL || "ckmservices@outlook.fr";
 
   return resend.emails.send({
     from: `Site CKM Services <${from}>`,

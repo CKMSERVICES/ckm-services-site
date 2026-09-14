@@ -13,6 +13,7 @@ const navLinks = [
   { href: "#process", label: "Processus" },
   { href: "#testimonials", label: "Résultats" },
   { href: "#quality", label: "Standards" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Header() {

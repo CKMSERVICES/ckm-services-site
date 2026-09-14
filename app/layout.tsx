@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
-import { localBusinessSchema, servicesSchema } from "@/lib/structuredData";
+import { localBusinessSchema, servicesSchema, faqSchema } from "@/lib/structuredData";
 import WaterDropEffect from "@/components/WaterDropEffect";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -104,6 +104,11 @@ export default function RootLayout({
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema()) }}
         />
       </head>
       <body className="font-sans">

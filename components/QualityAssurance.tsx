@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Leaf,
   ShieldCheck,
@@ -43,14 +44,22 @@ export default function QualityAssurance() {
             const Icon = iconMap[badge.icon] ?? ShieldCheck;
             return (
               <ScrollReveal key={badge.label} delay={index * 0.06}>
-                <div className="glass-panel flex h-full flex-col items-center gap-3 p-5 text-center">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sapphire-100 text-sapphire-700">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                  className="glass-panel flex h-full flex-col items-center gap-3 p-5 text-center"
+                >
+                  <motion.span
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 12 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-sapphire-100 text-sapphire-700"
+                  >
                     <Icon className="h-6 w-6" aria-hidden="true" />
-                  </span>
+                  </motion.span>
                   <p className="text-xs font-semibold leading-snug text-slate-700">
                     {badge.label}
                   </p>
-                </div>
+                </motion.div>
               </ScrollReveal>
             );
           })}

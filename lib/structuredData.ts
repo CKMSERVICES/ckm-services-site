@@ -1,4 +1,4 @@
-import { siteConfig, services } from "./constants";
+import { siteConfig, services, faqs } from "./constants";
 
 export function localBusinessSchema() {
   return {
@@ -62,5 +62,20 @@ export function servicesSchema() {
         },
       })),
     },
+  };
+}
+
+export function faqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }

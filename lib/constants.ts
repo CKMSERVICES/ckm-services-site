@@ -173,3 +173,36 @@ export const trustPoints = [
     description: "Réactif, proche de chez vous.",
   },
 ];
+
+export const faqs = [
+  {
+    question: "Le devis est-il vraiment gratuit ?",
+    answer:
+      "Oui. Vous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire, et vous recevez un devis clair sous 48h, sans frais et sans obligation d'achat.",
+  },
+  {
+    question: "Faut-il vous recevoir sur place pour établir le devis ?",
+    answer:
+      "Pas forcément. La plupart des devis se font à distance à partir de votre description (type de local, surface, fréquence souhaitée). Une visite peut être organisée si votre site le nécessite.",
+  },
+  {
+    question: "Y a-t-il un engagement de durée ?",
+    answer:
+      "Non, aucun engagement long. Vous restez libre de continuer, d'ajuster la fréquence ou d'arrêter la prestation à tout moment, sans préavis contraignant.",
+  },
+  {
+    question: "Dans quelles villes intervenez-vous ?",
+    answer:
+      "Nous sommes basés à Nanterre (92) et intervenons dans toute l'Île-de-France : Paris, Courbevoie, Puteaux, La Défense, Boulogne-Billancourt, Levallois-Perret, Colombes et les environs.",
+  },
+  {
+    question: "Utilisez-vous des produits écologiques ?",
+    answer:
+      "Oui, nos équipes utilisent des produits certifiés écologiques et du matériel professionnel adapté à chaque type de surface, en tenant compte de la sécurité de vos équipes.",
+  },
+  {
+    question: "Quels types de sites nettoyez-vous ?",
+    answer:
+      "Bureaux, commerces, locaux industriels, et sites en fin de chantier. Si votre besoin sort de ces catégories, décrivez-le-nous : nous adaptons nos équipes en conséquence.",
+  },
+];

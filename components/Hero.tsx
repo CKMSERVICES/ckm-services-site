@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, BadgeCheck, Clock, ShieldCheck, Sparkles } from "lucide-react";
 import { siteConfig, trustPoints } from "@/lib/constants";
 
@@ -9,13 +9,39 @@ const iconMap = { BadgeCheck, Clock };
 export default function Hero() {
   const [pointA, pointB] = trustPoints;
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 40, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 40, damping: 20 });
+  const orb1X = useTransform(springX, [-1, 1], [-24, 24]);
+  const orb1Y = useTransform(springY, [-1, 1], [-24, 24]);
+  const orb2X = useTransform(springX, [-1, 1], [18, -18]);
+  const orb2Y = useTransform(springY, [-1, 1], [18, -18]);
+
+  function handleMouseMove(event: React.MouseEvent<HTMLElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    mouseX.set(((event.clientX - rect.left) / rect.width - 0.5) * 2);
+    mouseY.set(((event.clientY - rect.top) / rect.height - 0.5) * 2);
+  }
+
   return (
     <section
       id="top"
+      onMouseMove={handleMouseMove}
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-sapphire-gradient pb-20 pt-32"
     >
       {/* Layered background: gradient + soft light circles, matching CKM's brand visuals */}
       <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
+      <motion.div
+        aria-hidden="true"
+        style={{ x: orb1X, y: orb1Y }}
+        className="pointer-events-none absolute -left-20 top-16 h-80 w-80 rounded-full bg-white/10 blur-3xl"
+      />
+      <motion.div
+        aria-hidden="true"
+        style={{ x: orb2X, y: orb2Y }}
+        className="pointer-events-none absolute -right-16 bottom-0 h-96 w-96 rounded-full bg-gold-400/10 blur-3xl"
+      />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-center lg:px-8">
         <div>

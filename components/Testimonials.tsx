@@ -99,10 +99,21 @@ export default function Testimonials() {
                   onClick={() => setIndex(i)}
                   aria-label={`Afficher le témoignage de ${t.name}`}
                   aria-current={i === index}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === index ? "w-6 bg-white" : "w-2 bg-white/30"
+                  className={`relative h-2 overflow-hidden rounded-full bg-white/25 transition-all duration-300 ${
+                    i === index ? "w-8" : "w-2"
                   }`}
-                />
+                >
+                  {i === index && (
+                    <motion.span
+                      key={`${index}-progress`}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: paused ? 0.3 : 1 }}
+                      transition={{ duration: paused ? 0.3 : 6, ease: "linear" }}
+                      style={{ transformOrigin: "left" }}
+                      className="absolute inset-0 rounded-full bg-white"
+                    />
+                  )}
+                </button>
               ))}
             </div>
 

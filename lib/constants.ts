@@ -7,7 +7,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.ckmservices.fr",
   phone: "06 82 56 88 44",
   phoneHref: "+33682568844",
-  email: "ckmservices@outlook.fr",
+  email: "contact@ckmservices.fr",
   // Chiffres uniquement, indicatif pays en premier — utilisé pour le lien
   // WhatsApp gratuit (wa.me), aucune API payante requise.
   whatsapp: "33682568844",

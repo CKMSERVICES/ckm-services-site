@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Sparkles, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 import clsx from "clsx";
 import { siteConfig } from "@/lib/constants";
 
@@ -40,11 +41,17 @@ export default function Header() {
         aria-label="Primary"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
       >
-        <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-white">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400 text-sapphire-950">
-            <Sparkles className="h-5 w-5" aria-hidden="true" />
+        <a href="#top" className="flex items-center" aria-label={siteConfig.name}>
+          <span className="flex items-center justify-center rounded-xl bg-white p-1.5 shadow-soft">
+            <Image
+              src="/brand/logo.png"
+              alt={siteConfig.name}
+              width={38}
+              height={40}
+              className="h-9 w-auto"
+              priority
+            />
           </span>
-          {siteConfig.shortName}
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">

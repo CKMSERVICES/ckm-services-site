@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/constants";
 
 const quickLinks = [
@@ -13,11 +13,16 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           <div>
-            <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold text-white">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gold-400 text-sapphire-950">
-                <Sparkles className="h-5 w-5" aria-hidden="true" />
+            <a href="#top" className="inline-flex items-center" aria-label={siteConfig.name}>
+              <span className="flex items-center justify-center rounded-xl bg-white p-1.5 shadow-soft">
+                <Image
+                  src="/brand/logo.png"
+                  alt={siteConfig.name}
+                  width={38}
+                  height={40}
+                  className="h-9 w-auto"
+                />
               </span>
-              {siteConfig.shortName}
             </a>
             <p className="mt-4 max-w-xs text-sm text-white/55">
               {siteConfig.description}

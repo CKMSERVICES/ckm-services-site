@@ -42,11 +42,47 @@
   }
 
   .glass-card {
-    @apply relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 shadow-soft transition-all duration-300 sm:p-8;
+    @apply relative isolate overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 shadow-soft transition-all duration-300 sm:p-8;
   }
 
   .glass-card:hover {
     @apply shadow-elevate;
+  }
+
+  /* Thin gradient accent line that sweeps in along the top edge on hover. */
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, theme("colors.sapphire.500"), theme("colors.gold.400"));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1;
+  }
+
+  .glass-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Soft diagonal light sweep across the card on hover. */
+  .glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 30%, rgba(56, 104, 184, 0.06) 50%, transparent 70%);
+    background-size: 250% 100%;
+    background-position: 200% 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-position 0.9s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glass-card:hover::after {
+    opacity: 1;
+    background-position: -50% 0;
   }
 
   /* Translucent chips — for text sitting on top of the hero's inner dark
@@ -57,7 +93,7 @@
 
   /* Primary action button placed directly on the blue page background. */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-sapphire-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow focus-visible:-translate-y-0.5;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-sapphire-800 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow focus-visible:-translate-y-0.5;
   }
 
   /* Outline button on the blue page background. */
@@ -72,7 +108,31 @@
 
   /* Solid action button for use on a white card (e.g. the quote form). */
   .btn-solid {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sapphire-700 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-sapphire-800 focus-visible:-translate-y-0.5;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-sapphire-700 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-sapphire-800 focus-visible:-translate-y-0.5;
+  }
+
+  /* Diagonal shine sweep on hover, shared by the primary + solid buttons. */
+  .btn-primary::after,
+  .btn-solid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+  }
+
+  .btn-solid::after {
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  }
+
+  .btn-primary:hover::after,
+  .btn-solid:hover::after {
+    left: 125%;
   }
 
   .eyebrow {
@@ -81,6 +141,11 @@
 
   .section-heading {
     @apply font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl;
+  }
+
+  /* Gradient accent for a highlighted word inside a heading. */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-300 via-gold-100 to-white bg-clip-text text-transparent;
   }
 
   .noise-layer {

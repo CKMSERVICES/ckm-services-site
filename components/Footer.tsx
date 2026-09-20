@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/constants";
 const quickLinks = [
   { href: "#services", label: "Services" },
   { href: "#why-us", label: "À Propos" },
+  { href: "/blog", label: "Blog" },
   { href: "#quote", label: "Contact" },
 ];
 

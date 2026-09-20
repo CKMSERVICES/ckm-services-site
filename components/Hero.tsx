@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, BadgeCheck, Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, Droplets, ShieldCheck, Sparkles } from "lucide-react";
 import { siteConfig, trustPoints } from "@/lib/constants";
 
 const iconMap = { BadgeCheck, Clock };
@@ -137,6 +137,31 @@ export default function Hero() {
                   </p>
                 </div>
               </div>
+
+              {/* Centerpiece — decorative glow, fills the empty middle of the panel */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="relative flex h-40 w-40 items-center justify-center"
+                >
+                  <motion.span
+                    animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute inset-0 rounded-full bg-gold-400/20"
+                  />
+                  <motion.span
+                    animate={{ scale: [1, 1.25, 1], opacity: [0.4, 0, 0.4] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                    className="absolute inset-4 rounded-full bg-white/10"
+                  />
+                  <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm">
+                    <Droplets className="h-9 w-9 text-gold-300" aria-hidden="true" />
+                  </span>
+                </motion.div>
+              </div>
+
               <div className="absolute inset-0 flex flex-col justify-end gap-4 p-6">
                 {[pointA, pointB].map((point) => {
                   const Icon = iconMap[point.icon as keyof typeof iconMap];

@@ -11,19 +11,72 @@ const title =
 const description =
   "Coûts cachés du ménage en interne, flexibilité, image de marque : les vraies raisons pour lesquelles de plus en plus d'entreprises franciliennes délèguent l'entretien de leurs locaux à un prestataire professionnel.";
 const publishedDate = "2026-09-20";
+const slug = "pourquoi-externaliser-nettoyage-bureaux-nanterre-idf";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "/blog/pourquoi-externaliser-nettoyage-bureaux-nanterre-idf",
+    canonical: `/blog/${slug}`,
   },
   openGraph: {
     type: "article",
     title,
     description,
     publishedTime: publishedDate,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.jpg"],
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  image: `${siteConfig.url}/og-image.jpg`,
+  datePublished: publishedDate,
+  dateModified: publishedDate,
+  inLanguage: "fr-FR",
+  author: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}/brand/logo.png`,
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/blog/${slug}`,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: siteConfig.url },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+    { "@type": "ListItem", position: 3, name: title, item: `${siteConfig.url}/blog/${slug}` },
+  ],
 };
 
 const raisons = [
@@ -83,6 +136,16 @@ export default function BlogPost() {
       <Header />
       <main id="main-content">
         <article>
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
           <section className="relative overflow-hidden bg-sapphire-gradient pb-16 pt-36">
             <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
             <div className="relative mx-auto max-w-3xl px-6 lg:px-8">

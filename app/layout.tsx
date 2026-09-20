@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -7,17 +7,18 @@ import { siteConfig } from "@/lib/constants";
 import { localBusinessSchema, servicesSchema, faqSchema } from "@/lib/structuredData";
 import WaterDropEffect from "@/components/WaterDropEffect";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
-  variable: "--font-jakarta",
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -93,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="fr" className={`${manrope.variable} ${outfit.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -118,9 +119,11 @@ export default function RootLayout({
         >
           Aller au contenu principal
         </a>
+        <div className="noise-layer pointer-events-none fixed inset-0 z-40" aria-hidden="true" />
         <WaterDropEffect />
         {children}
         <WhatsAppButton />
+        <ScrollToTop />
         <Analytics />
         <SpeedInsights />
       </body>

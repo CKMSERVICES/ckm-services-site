@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "prix-nettoyage-professionnel-ile-de-france",
+    title:
+      "Prix du Nettoyage Professionnel en Île-de-France : Le Guide des Tarifs 2026",
+    excerpt:
+      "Entretien de bureaux, nettoyage ponctuel, vitres, fin de chantier : les fourchettes de prix constatées en Île-de-France, ce qui fait varier un devis, et comment obtenir un tarif juste.",
+    date: "2026-09-20",
+    readingTime: "7 min",
+  },
+  {
     slug: "pourquoi-externaliser-nettoyage-bureaux-nanterre-idf",
     title:
       "Pourquoi Externaliser le Nettoyage de Vos Bureaux à Nanterre et en Île-de-France",
@@ -63,7 +72,7 @@ export default function BlogIndex() {
                       <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                       {post.readingTime} de lecture
                     </span>
-                </div>
+                  </div>
                   <h2 className="mt-4 text-2xl font-semibold text-sapphire-900">
                     {post.title}
                   </h2>

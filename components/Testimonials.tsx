@@ -1,133 +1,100 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useEffect, useRef } from "react";
+import {
+motion,
+useInView,
+useMotionValue,
+useSpring,
+useTransform,
+} from "framer-motion";
+import { ExternalLink, Star } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { testimonials } from "@/lib/constants";
+import { googleRating } from "@/lib/constants";
+
+function AnimatedRating() {
+const ref = useRef<HTMLSpanElement>(null);
+const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+const motionValue = useMotionValue(0);
+const spring = useSpring(motionValue, { duration: 1.2, bounce: 0 });
+const display = useTransform(spring, (v) => v.toFixed(1));
+
+useEffect(() => {
+if (inView) motionValue.set(googleRating.value);
+}, [inView, motionValue]);
+
+return <motion.span ref={ref}>{display}</motion.span>;
+}
+
+function AnimatedReviewCount() {
+const ref = useRef<HTMLSpanElement>(null);
+const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+const motionValue = useMotionValue(0);
+const spring = useSpring(motionValue, { duration: 1.2, bounce: 0 });
+const display = useTransform(spring, (v) => Math.round(v));
+
+useEffect(() => {
+if (inView) motionValue.set(googleRating.count);
+}, [inView, motionValue]);
+
+return <motion.span ref={ref}>{display}</motion.span>;
+}
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+return (
+<section id="testimonials" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
+<div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
+<div className="relative mx-auto max-w-3xl px-6 text-center lg:px-8">
+<ScrollReveal className="mx-auto max-w-2xl">
+<span className="eyebrow">Avis Vérifiés</span>
+<h2 className="section-heading mt-5">
+Noté 5 Étoiles par Nos Clients sur Google.
+</h2>
+<p className="mt-5 text-lg text-white/80">
+Pas de témoignages inventés ici — juste notre fiche Google, à jour,
+que vous pouvez consulter et compléter vous-même.
+</p>
+</ScrollReveal>
 
-  const next = useCallback(
-    () => setIndex((i) => (i + 1) % testimonials.length),
-    []
-  );
-  const prev = useCallback(
-    () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length),
-    []
-  );
+<ScrollReveal delay={0.1}>
+<a
+href={googleRating.url}
+target="_blank"
+rel="noopener noreferrer"
+className="glass-panel group mt-12 inline-flex flex-col items-center gap-5 px-10 py-10 transition-transform duration-300 hover:-translate-y-1 sm:px-16"
+>
+<div className="flex items-center gap-1" aria-hidden="true">
+{Array.from({ length: 5 }).map((_, i) => (
+<motion.span
+key={i}
+initial={{ opacity: 0, scale: 0.4, rotate: -20 }}
+whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+viewport={{ once: true }}
+transition={{ delay: 0.15 + i * 0.08, type: "spring", stiffness: 260, damping: 14 }}
+>
+<Star className="h-8 w-8 fill-gold-400 text-gold-400" />
+</motion.span>
+))}
+</div>
 
-  useEffect(() => {
-    if (paused) return;
-    const id = window.setInterval(next, 6000);
-    return () => window.clearInterval(id);
-  }, [paused, next]);
+<div className="flex items-baseline gap-3">
+<span className="font-display text-5xl font-bold text-slate-900 sm:text-6xl">
+<AnimatedRating />
+</span>
+<span className="text-lg font-medium text-slate-500">/ 5</span>
+</div>
 
-  const active = testimonials[index];
+<p className="text-sm font-semibold uppercase tracking-wide text-sapphire-700">
+<AnimatedReviewCount /> avis Google
+</p>
 
-  return (
-    <section id="testimonials" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
-      <div className="absolute inset-0 bg-sapphire-radial" aria-hidden="true" />
-      <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
-        <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Succès Clients</span>
-          <h2 className="section-heading mt-5">Des Résultats Qui Parlent d&apos;Eux-Mêmes.</h2>
-        </ScrollReveal>
-
-        <div
-          className="relative mt-14"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
-          role="region"
-          aria-roledescription="carousel"
-          aria-label="Témoignages clients"
-        >
-          <div className="glass-panel relative overflow-hidden p-8 sm:p-12">
-            <Quote className="h-10 w-10 text-gold-400" aria-hidden="true" />
-            <AnimatePresence mode="wait">
-              <motion.blockquote
-                key={active.name}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.4 }}
-                aria-live="polite"
-              >
-                <p className="mt-4 text-balance text-lg leading-relaxed text-slate-800 sm:text-xl">
-                  &ldquo;{active.quote}&rdquo;
-                </p>
-                <footer className="mt-6 flex items-center gap-3">
-                  <div
-                    aria-hidden="true"
-                    className="flex h-11 w-11 items-center justify-center rounded-full bg-sapphire-700 font-display text-sm font-bold text-white"
-                  >
-                    {active.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{active.name}</p>
-                    <p className="text-xs text-slate-500">
-                      {active.role}, {active.company}
-                    </p>
-                  </div>
-                </footer>
-              </motion.blockquote>
-            </AnimatePresence>
-          </div>
-
-          <div className="mt-6 flex items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Témoignage précédent"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-white/70 transition-colors hover:border-white hover:text-white"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {testimonials.map((t, i) => (
-                <button
-                  key={t.name}
-                  type="button"
-                  onClick={() => setIndex(i)}
-                  aria-label={`Afficher le témoignage de ${t.name}`}
-                  aria-current={i === index}
-                  className={`relative h-2 overflow-hidden rounded-full bg-white/25 transition-all duration-300 ${
-                    i === index ? "w-8" : "w-2"
-                  }`}
-                >
-                  {i === index && (
-                    <motion.span
-                      key={`${index}-progress`}
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: paused ? 0.3 : 1 }}
-                      transition={{ duration: paused ? 0.3 : 6, ease: "linear" }}
-                      style={{ transformOrigin: "left" }}
-                      className="absolute inset-0 rounded-full bg-white"
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Témoignage suivant"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-white/70 transition-colors hover:border-white hover:text-white"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+<span className="btn-secondary mt-2 inline-flex items-center gap-2 text-sm">
+Voir les avis sur Google
+<ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+</span>
+</a>
+</ScrollReveal>
+</div>
+</section>
+);
 }

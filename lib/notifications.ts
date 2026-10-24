@@ -1,11 +1,14 @@
-import { Resend } from "resend";
 import type { LeadPayload } from "./validation";
 // WhatsApp is handled client-side via a free wa.me click-to-chat link
 // (see lib/constants.ts + components/WhatsAppButton.tsx) instead of a paid
 // API (Twilio/Meta), so no server-side WhatsApp sending happens here.
 
-const resendApiKey = process.env.RESEND_API_KEY;
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
+// Email notifications go through the Hostinger Mail API, sent from the
+// contact@ckmservices.fr mailbox itself (the API has no separate "from"
+// field — it always sends as the authenticated mailbox).
+const hostingerMailApiKey = process.env.HOSTINGER_MAIL_API_KEY;
+const hostingerMailboxId =
+  process.env.HOSTINGER_MAILBOX_ID || "ACb6710855e890848fc7565f0930ee";
 
 function leadEmailHtml(lead: LeadPayload) {
   const rows: [string, string][] = [
@@ -35,6 +38,10 @@ function leadEmailHtml(lead: LeadPayload) {
         <p style="color:#93fbe9;margin:4px 0 0;font-size:13px;">CKM Services — lead du site web</p>
       </div>
       <table style="width:100%;border-collapse:collapse;">${rowsHtml}</table>
+      <p style="padding:12px 24px;color:#5478c4;font-size:12px;">
+        Pour répondre directement au client, utilisez son adresse email ci-dessus
+        (cette notification est envoyée depuis contact@ckmservices.fr).
+      </p>
     </div>
   </div>`;
 }
@@ -48,23 +55,47 @@ function escapeHtml(value: string) {
 }
 
 export async function sendLeadEmail(lead: LeadPayload) {
-  if (!resend) {
+  if (!hostingerMailApiKey) {
     console.warn(
-      "[notifications] RESEND_API_KEY not configured — skipping lead email."
+      "[notifications] HOSTINGER_MAIL_API_KEY not configured — skipping lead email."
     );
     return { skipped: true };
   }
 
-  const from = process.env.LEAD_FROM_EMAIL || "leads@ckmservices.fr";
   const to = process.env.LEAD_TO_EMAIL || "contact@ckmservices.fr";
 
-  return resend.emails.send({
-    from: `Site CKM Services <${from}>`,
-    to,
-    replyTo: lead.email,
-    subject: `Nouvelle demande de devis de ${lead.name}${
-      lead.company ? ` (${lead.company})` : ""
-    }`,
-    html: leadEmailHtml(lead),
-  });
+  const response = await fetch(
+    `https://api.mail.hostinger.com/api/v1/mailboxes/${hostingerMailboxId}/send`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${hostingerMailApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: [to],
+        displayName: "Site CKM Services",
+        subject: `Nouvelle demande de devis de ${lead.name}${
+          lead.company ? ` (${lead.company})` : ""
+        }`,
+        html: leadEmailHtml(lead),
+        text: `Nouvelle demande de devis\n\nNom: ${lead.name}\nEntreprise: ${
+          lead.company || "—"
+        }\nEmail: ${lead.email}\nTéléphone: ${lead.phone}\nType de site: ${
+          lead.premisesType
+        }\nServices: ${lead.services.join(", ") || "—"}\nMessage: ${
+          lead.message || "—"
+        }`,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errorBody = await response.text().catch(() => "");
+    throw new Error(
+      `[notifications] Hostinger Mail API error (${response.status}): ${errorBody}`
+    );
+  }
+
+  return { skipped: false };
 }

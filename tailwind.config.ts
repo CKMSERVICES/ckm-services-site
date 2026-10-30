@@ -89,12 +89,17 @@ const config: Config = {
           "0%, 100%": { opacity: "0.3", transform: "scale(0.8)" },
           "50%": { opacity: "1", transform: "scale(1.15)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         ripple: "ripple 0.7s ease-out forwards",
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 3s linear infinite",
         sparkle: "sparkle 2.2s ease-in-out infinite",
+        marquee: "marquee 32s linear infinite",
       },
     },
   },

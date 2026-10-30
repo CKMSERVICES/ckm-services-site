@@ -23,6 +23,9 @@ const iconMap: Record<string, LucideIcon> = {
   ShieldCheck,
 };
 
+// Doubled for a seamless, continuous loop (track scrolls exactly -50%).
+const track = [...services, ...services];
+
 export default function Services() {
   return (
     <section id="services" className="relative overflow-hidden bg-sapphire-gradient py-24 sm:py-32">
@@ -38,13 +41,18 @@ export default function Services() {
             service est conçu autour des besoins réels de votre site.
           </p>
         </ScrollReveal>
+      </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
-            const Icon = iconMap[service.icon] ?? Sparkles;
-            return (
-              <ScrollReveal key={service.slug} delay={(index % 3) * 0.1}>
-                <GlassCard className="group flex h-full flex-col items-center text-center">
+      <ScrollReveal delay={0.1} className="relative mt-16">
+        <div className="group/marquee relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+          <div className="flex w-max animate-marquee gap-6 group-hover/marquee:[animation-play-state:paused] motion-reduce:animate-none">
+            {track.map((service, index) => {
+              const Icon = iconMap[service.icon] ?? Sparkles;
+              return (
+                <GlassCard
+                  key={`${service.slug}-${index}`}
+                  className="group flex h-full w-[280px] flex-shrink-0 flex-col items-center text-center sm:w-[320px]"
+                >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sapphire-50 text-sapphire-600 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
@@ -62,11 +70,11 @@ export default function Services() {
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </GlassCard>
-              </ScrollReveal>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

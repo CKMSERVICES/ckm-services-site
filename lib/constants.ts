@@ -44,7 +44,7 @@ description:
 },
 {
 slug: "entretien-des-sols",
-title: "Entretien des Sols Commerciaux",
+title: "Entretien des Sols",
 icon: "Sparkles",
 description:
 "Décapage, cirage et extraction de moquette pour des sols qui impressionnent chaque visiteur.",

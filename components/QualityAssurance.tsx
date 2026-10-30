@@ -29,7 +29,7 @@ return (
 <ScrollReveal className="mx-auto max-w-2xl text-center">
 <span className="eyebrow-dark">Le Standard CKM</span>
 <h2 className="section-heading-dark mt-5">
-Notre Engagement pour la Qualité, la Sécurité &amp; la Durabilité.
+La Qualité, la Sécurité &amp; la Durabilité, Toujours.
 </h2>
 <p className="mt-5 text-lg text-slate-600">
 Chaque équipe, chaque produit et chaque protocole répond à un

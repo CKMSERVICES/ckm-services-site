@@ -22,10 +22,10 @@ les frictions habituelles du secteur.
 
 <ScrollReveal delay={0.1}>
 <div className="mt-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
-<div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-700">
-<div className="px-4 py-4 sm:px-6">Besoin</div>
-<div className="px-4 py-4 text-center sm:px-6">Approche Classique</div>
-<div className="relative px-4 py-4 text-center text-sapphire-700 sm:px-6">
+<div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-600 sm:text-sm sm:tracking-normal">
+<div className="px-3 py-2.5 sm:px-5 sm:py-3">Besoin</div>
+<div className="px-3 py-2.5 text-center sm:px-5 sm:py-3">Approche Classique</div>
+<div className="relative px-3 py-2.5 text-center text-sapphire-700 sm:px-5 sm:py-3">
 {siteConfig.shortName} Services
 </div>
 </div>
@@ -37,19 +37,19 @@ initial={{ opacity: 0, y: 10 }}
 whileInView={{ opacity: 1, y: 0 }}
 viewport={{ once: true }}
 transition={{ delay: index * 0.07, duration: 0.4 }}
-className={`grid grid-cols-3 text-sm ${
+className={`grid grid-cols-3 text-xs leading-snug sm:text-sm ${
 index % 2 === 0 ? "bg-white" : "bg-slate-50/60"
 }`}
 >
-<div className="px-4 py-4 font-medium text-slate-900 sm:px-6">
+<div className="px-3 py-2.5 font-medium text-slate-900 sm:px-5 sm:py-3">
 {row.need}
 </div>
-<div className="flex items-start gap-2 px-4 py-4 text-slate-500 sm:px-6">
-<X className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-300" aria-hidden="true" />
+<div className="flex items-start gap-1.5 px-3 py-2.5 text-slate-500 sm:px-5 sm:py-3">
+<X className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-slate-300" aria-hidden="true" />
 <span>{row.traditional}</span>
 </div>
-<div className="flex items-start gap-2 bg-sapphire-50/40 px-4 py-4 text-slate-800 sm:px-6">
-<Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-sapphire-600" aria-hidden="true" />
+<div className="flex items-start gap-1.5 bg-sapphire-50/40 px-3 py-2.5 text-slate-800 sm:px-5 sm:py-3">
+<Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sapphire-600" aria-hidden="true" />
 <span>{row.ckm}</span>
 </div>
 </motion.div>

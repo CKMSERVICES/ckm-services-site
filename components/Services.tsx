@@ -44,7 +44,7 @@ export default function Services() {
             const Icon = iconMap[service.icon] ?? Sparkles;
             return (
               <ScrollReveal key={service.slug} delay={(index % 3) * 0.1}>
-                <GlassCard className="group flex h-full flex-col">
+                <GlassCard className="group flex h-full flex-col items-center text-center">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sapphire-50 text-sapphire-600 transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>

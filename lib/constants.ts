@@ -40,42 +40,42 @@ slug: "nettoyage-de-bureaux",
 title: "Nettoyage de Bureaux",
 icon: "Building2",
 description:
-"Bureaux, salles de réunion et espaces communs impeccables dès l'ouverture, sur un planning taillé pour votre rythme.",
+"Bureaux et espaces communs impeccables dès l'ouverture, sur un planning taillé pour vous.",
 },
 {
 slug: "entretien-des-sols",
 title: "Entretien des Sols Commerciaux",
 icon: "Sparkles",
 description:
-"Décapage, cirage et extraction de moquette : des sols qui protègent votre investissement et marquent les esprits.",
+"Décapage, cirage et extraction de moquette pour des sols qui impressionnent chaque visiteur.",
 },
 {
 slug: "lavage-de-vitres",
 title: "Lavage de Vitres",
 icon: "AppWindow",
 description:
-"Vitres et façades impeccables, à l'intérieur comme à l'extérieur, grâce à nos systèmes professionnels à eau pure.",
+"Vitres et façades impeccables, intérieur comme extérieur, grâce à nos systèmes à eau pure.",
 },
 {
 slug: "services-de-conciergerie",
 title: "Services de Conciergerie",
 icon: "ClipboardCheck",
 description:
-"Une équipe formée et supervisée, des checklists sur mesure et des contrôles qualité adaptés à vos horaires.",
+"Une équipe formée et supervisée, des checklists sur mesure adaptées à vos horaires.",
 },
 {
 slug: "nettoyage-post-chantier",
 title: "Nettoyage Post-Chantier",
 icon: "HardHat",
 description:
-"Gravats évacués, poussière éliminée : votre chantier devient un espace prêt à l'emploi, rapidement et sans effort.",
+"Gravats évacués, poussière éliminée : un chantier transformé en espace prêt à l'emploi.",
 },
 {
 slug: "autres-besoins",
 title: "Autres Besoins",
 icon: "Sparkles",
 description:
-"Un besoin hors des cases habituelles ? Décrivez votre situation, on adapte équipes et planning pour y répondre vite.",
+"Un besoin particulier ? Décrivez votre situation, on adapte nos équipes en conséquence.",
 },
 ];
 

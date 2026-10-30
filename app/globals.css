@@ -46,7 +46,7 @@ social/marketing visuals. */
 }
 
 .glass-card:hover {
-@apply shadow-elevate;
+@apply shadow-premium;
 }
 
 /* Thin gradient accent line that sweeps in along the top edge on hover. */
@@ -93,7 +93,7 @@ section background instead of disappearing into it. */
 }
 
 .tint-card:hover {
-@apply border-sapphire-200 bg-white shadow-elevate;
+@apply border-sapphire-200 bg-white shadow-premium;
 }
 
 /* Translucent chips — for text sitting on top of the hero's inner dark

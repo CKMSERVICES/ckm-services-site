@@ -8,23 +8,23 @@ import GlassCard from "./GlassCard";
 const points = [
   {
     icon: Building2,
-    title: "Valorisez Votre Image d'Entreprise",
-    body: "Un environnement impeccable n'est pas seulement propre — c'est une déclaration. C'est la première impression que reçoivent vos clients, et le coup de fouet quotidien que mérite votre équipe. Nous ne nettoyons pas seulement ; nous façonnons une atmosphère de professionnalisme.",
+    title: "Valorisez Votre Image",
+    body: "Un local impeccable, c'est la première impression de vos clients et la fierté quotidienne de vos équipes.",
   },
   {
     icon: Handshake,
     title: "Vivez la Différence",
-    body: "Nous ne proposons pas seulement des services ; nous proposons des solutions qui vous font gagner du temps, réduisent vos coûts et projettent un niveau d'excellence inégalé. Choisissez-nous et gagnez un partenaire stratégique dédié à votre réussite.",
+    body: "Moins de temps perdu, moins de coûts cachés, plus de sérénité au quotidien.",
   },
   {
     icon: PiggyBank,
-    title: "Au-Delà du Propre : Intelligence Financière",
-    body: "Des services de nettoyage professionnels peuvent être un véritable atout pour votre entreprise. Nos solutions sur mesure sont conçues pour optimiser votre budget de fonctionnement — parlez-en à votre comptable pour connaître les avantages fiscaux potentiels. Investir dans la propreté, c'est investir dans la croissance.",
+    title: "Intelligence Financière",
+    body: "Un entretien bien pensé optimise votre budget de fonctionnement — à aborder avec votre comptable.",
   },
   {
     icon: Users,
-    title: "Une Équipe qui Définit l'Excellence",
-    body: "Nos professionnels méticuleux et rigoureusement sélectionnés sont le cœur de notre service — de véritables artisans de l'hygiène, formés aux techniques écologiques les plus récentes. Nous attirons les meilleurs parce que nous sommes les meilleurs, et ce dévouement se voit dans chaque résultat.",
+    title: "Une Équipe d'Excellence",
+    body: "Des professionnels sélectionnés, formés aux techniques écologiques les plus récentes.",
   },
 ];
 
@@ -48,8 +48,7 @@ export default function WhyChooseUs() {
             Une Propreté Inégalée &amp; une Valeur Imbattable.
           </h2>
           <p className="mt-5 text-lg text-white/80">
-            Dites oui à une entreprise plus intelligente et plus propre — et à
-            un partenaire qui traite vos locaux comme les siens.
+            Un partenaire qui traite vos locaux comme les siens.
           </p>
         </ScrollReveal>
 
@@ -101,7 +100,7 @@ export default function WhyChooseUs() {
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {points.map((point, index) => (
             <ScrollReveal key={point.title} delay={index * 0.1} direction={index % 2 === 0 ? "left" : "right"}>
-              <GlassCard className="group h-full">
+              <GlassCard className="group flex h-full flex-col items-center text-center">
                 <motion.div
                   whileHover={{ scale: 1.08, rotate: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}

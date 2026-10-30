@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/constants";
+import { locations } from "@/lib/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    ...locations.map((location) => ({
+      url: `${siteConfig.url}/nettoyage-bureaux/${location.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
     {
       url: `${siteConfig.url}/blog`,
       lastModified: new Date(),

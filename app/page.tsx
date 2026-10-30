@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import QualityAssurance from "@/components/QualityAssurance";
+import ServiceAreas from "@/components/ServiceAreas";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ return (
 <Process />
 <Testimonials />
 <QualityAssurance />
+<ServiceAreas />
 <FAQ />
 <ContactForm />
 </main>

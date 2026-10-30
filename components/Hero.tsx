@@ -61,9 +61,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Un Nettoyage Commercial{" "}
-          <span className="text-gradient-gold">d&apos;Exception</span>, Pensé
-          Pour Votre Performance.
+          Votre Nettoyage Commercial{" "}
+          <span className="text-gradient-gold">d&apos;Exception</span>.
         </motion.h1>
 
         <motion.p

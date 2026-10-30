@@ -40,42 +40,42 @@ slug: "nettoyage-de-bureaux",
 title: "Nettoyage de Bureaux",
 icon: "Building2",
 description:
-"Des programmes quotidiens, hebdomadaires ou nocturnes qui gardent bureaux, espaces communs et salles de réunion impeccables à chaque prise de poste.",
+"Bureaux, salles de réunion et espaces communs impeccables dès l'ouverture, sur un planning taillé pour votre rythme.",
 },
 {
 slug: "entretien-des-sols",
 title: "Entretien des Sols Commerciaux",
 icon: "Sparkles",
 description:
-"Décapage, cirage, lustrage et extraction de moquette qui protègent votre investissement au sol et impressionnent chaque visiteur.",
+"Décapage, cirage et extraction de moquette : des sols qui protègent votre investissement et marquent les esprits.",
 },
 {
 slug: "lavage-de-vitres",
 title: "Lavage de Vitres",
 icon: "AppWindow",
 description:
-"Des vitres impeccables, intérieures et extérieures, des vitrines aux façades des immeubles, grâce à des systèmes à eau pure.",
+"Vitres et façades impeccables, à l'intérieur comme à l'extérieur, grâce à nos systèmes professionnels à eau pure.",
 },
 {
 slug: "services-de-conciergerie",
 title: "Services de Conciergerie",
 icon: "ClipboardCheck",
 description:
-"Des équipes de conciergerie formées et supervisées, avec des listes de contrôle sur mesure et des audits qualité adaptés à vos horaires.",
+"Une équipe formée et supervisée, des checklists sur mesure et des contrôles qualité adaptés à vos horaires.",
 },
 {
 slug: "nettoyage-post-chantier",
 title: "Nettoyage Post-Chantier",
 icon: "HardHat",
 description:
-"Évacuation des gravats, dépoussiérage et nettoyage minutieux qui transforment un chantier en espace prêt à l'emploi, rapidement.",
+"Gravats évacués, poussière éliminée : votre chantier devient un espace prêt à l'emploi, rapidement et sans effort.",
 },
 {
 slug: "autres-besoins",
 title: "Autres Besoins",
 icon: "Sparkles",
 description:
-"Un besoin spécifique qui ne rentre pas dans les cases ? Décrivez-nous votre situation, on adapte nos équipes et notre planning en conséquence.",
+"Un besoin hors des cases habituelles ? Décrivez votre situation, on adapte équipes et planning pour y répondre vite.",
 },
 ];
 

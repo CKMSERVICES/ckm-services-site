@@ -66,6 +66,8 @@ const config: Config = {
         soft: "0 12px 32px -12px rgba(16,28,58,0.22)",
         elevate: "0 20px 60px -20px rgba(16,28,58,0.45)",
         glass: "0 8px 32px 0 rgba(16,28,58,0.25)",
+        premium:
+          "0 28px 70px -24px rgba(16,28,58,0.40), 0 0 0 1px rgba(56,104,184,0.10), 0 10px 24px -10px rgba(234,108,31,0.18)",
       },
       backdropBlur: {
         xs: "2px",

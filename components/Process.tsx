@@ -21,7 +21,7 @@ d&apos;ombre — et livrer des résultats visibles dès le premier jour.
 <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 {processSteps.map((step, index) => (
 <ScrollReveal key={step.step} delay={index * 0.1}>
-<div className="tint-card h-full">
+<div className="tint-card flex h-full flex-col items-center text-center">
 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sapphire-700 font-display text-lg font-bold text-white">
 {index + 1}
 </div>

@@ -88,7 +88,7 @@ description:
 },
 {
 step: "02",
-title: "Devis Sous 48h",
+title: "Devis Sous 24h",
 description:
 "Gratuit, clair, sans surprise. Vous savez exactement ce qui est inclus avant de vous engager.",
 },
@@ -118,7 +118,7 @@ url: "https://www.google.com/maps/search/?api=1&query=CKM+Services+Nanterre",
 // Chiffres vérifiables, dérivés des engagements réels de CKM (voir
 // trustPoints / siteConfig) — utilisés dans la bande de stats du site.
 export const stats = [
-{ value: "48h", label: "Délai de Devis" },
+{ value: "24h", label: "Délai de Devis" },
 { value: "10", label: "Villes Couvertes en Île-de-France" },
 { value: "0", label: "Engagement Long" },
 { value: "100%", label: "Produits Écologiques Certifiés" },
@@ -131,6 +131,7 @@ export const qualityBadges = [
 { icon: "ClipboardCheck", label: "Protocoles Qualité Stricts" },
 { icon: "Users", label: "Personnel Vérifié et de Confiance" },
 { icon: "ThumbsUp", label: "Garantie Satisfaction 100%" },
+  { icon: "Camera", label: "Compte-Rendu Photo Après Chaque Passage" },
 ];
 
 export const premiseTypes = [
@@ -153,7 +154,7 @@ description: "Vous restez libre, à tout moment.",
 },
 {
 icon: "Clock",
-title: "Devis Sous 48h",
+title: "Devis Sous 24h",
 description: "Une réponse rapide, sans attendre.",
 },
 {
@@ -169,7 +170,7 @@ export const comparisonPoints = [
 {
 need: "Devis",
 traditional: "Visite obligatoire, réponse sous plusieurs jours",
-ckm: "À distance possible, réponse claire sous 48h",
+ckm: "À distance possible, réponse claire sous 24h",
 },
 {
 need: "Engagement",
@@ -197,7 +198,7 @@ export const faqs = [
 {
 question: "Le devis est-il vraiment gratuit ?",
 answer:
-"Oui. Vous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire, et vous recevez un devis clair sous 48h, sans frais et sans obligation d'achat.",
+"Oui. Vous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire, et vous recevez un devis clair sous 24h, sans frais et sans obligation d'achat.",
 },
 {
 question: "Faut-il vous recevoir sur place pour établir le devis ?",

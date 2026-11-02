@@ -126,7 +126,7 @@ const faqs = [
   {
     question: "En combien de temps peut-on démarrer ?",
     answer:
-      "Après votre demande, vous recevez un devis sous 48h. Une fois validé, l'intervention peut généralement démarrer en quelques jours, aux horaires qui vous conviennent le mieux (avant l'ouverture, en soirée ou le week-end).",
+      "Après votre demande, vous recevez un devis sous 24h. Une fois validé, l'intervention peut généralement démarrer en quelques jours, aux horaires qui vous conviennent le mieux (avant l'ouverture, en soirée ou le week-end).",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function BlogPost() {
               <ScrollReveal>
                 <div className="mt-14 rounded-2xl bg-sapphire-gradient p-8 text-center shadow-soft sm:p-10">
                   <h2 className="text-balance text-2xl font-semibold text-white sm:text-3xl">
-                    Un devis gratuit sous 48h, sans engagement
+                    Un devis gratuit sous 24h, sans engagement
                   </h2>
                   <p className="mx-auto mt-3 max-w-xl text-balance text-white/80">
                     Basés à {siteConfig.baseCity}, nous intervenons dans tout Paris et sa proche périphérie — {siteConfig.serviceAreas.slice(1, 5).join(", ")} et les environs.

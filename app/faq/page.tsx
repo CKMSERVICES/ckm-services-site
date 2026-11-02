@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "Le devis est-il vraiment gratuit ?",
     answer:
-      "Oui. Vous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire, et vous recevez un devis clair sous 48h, sans frais et sans obligation d'achat.",
+      "Oui. Vous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire, et vous recevez un devis clair sous 24h, sans frais et sans obligation d'achat.",
   },
   {
     question: "Faut-il vous recevoir sur place pour établir le devis ?",
@@ -81,7 +81,7 @@ const faqs = [
   {
     question: "Comment se passe la première prise de contact ?",
     answer:
-      "Vous nous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire du site (type de local, surface, fréquence souhaitée). Nous revenons vers vous avec un devis sous 48h, sans engagement de votre part.",
+      "Vous nous décrivez votre besoin par téléphone, WhatsApp ou via le formulaire du site (type de local, surface, fréquence souhaitée). Nous revenons vers vous avec un devis sous 24h, sans engagement de votre part.",
   },
 ];
 
@@ -158,7 +158,7 @@ export default function FaqPage() {
                   Une autre question ? Contactez-nous
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-balance text-white/80">
-                  Réponse sous 48h, par téléphone, WhatsApp ou via le formulaire de devis.
+                  Réponse sous 24h, par téléphone, WhatsApp ou via le formulaire de devis.
                 </p>
                 <Link href="/#quote" className="btn-primary mt-6 inline-flex">
                   Obtenez Votre Devis Gratuit

@@ -227,7 +227,7 @@ export default function PricingBlogPost() {
               <ScrollReveal>
                 <div className="mt-10 rounded-2xl border border-sapphire-100 bg-sapphire-50/50 p-6">
                   <p className="text-sm leading-relaxed text-slate-600">
-                    Ces prix sont indicatifs et donnés à titre de repère : le tarif exact d&apos;une prestation dépend toujours de l&apos;état des lieux, de la fréquence et des spécificités de votre site. Chez {siteConfig.shortName}, chaque devis est personnalisé et fourni gratuitement sous 48h.
+                    Ces prix sont indicatifs et donnés à titre de repère : le tarif exact d&apos;une prestation dépend toujours de l&apos;état des lieux, de la fréquence et des spécificités de votre site. Chez {siteConfig.shortName}, chaque devis est personnalisé et fourni gratuitement sous 24h.
                   </p>
                 </div>
               </ScrollReveal>
@@ -283,7 +283,7 @@ export default function PricingBlogPost() {
               <ScrollReveal>
                 <div className="mt-14 rounded-2xl bg-sapphire-gradient p-8 text-center shadow-soft sm:p-10">
                   <h2 className="text-balance text-2xl font-semibold text-white sm:text-3xl">
-                    Un devis gratuit et personnalisé sous 48h
+                    Un devis gratuit et personnalisé sous 24h
                   </h2>
                   <p className="mx-auto mt-3 max-w-xl text-balance text-white/80">
                     Décrivez-nous votre local et vos besoins : vous recevez un chiffrage clair, sans engagement, adapté à {siteConfig.baseCity} et à toute l&apos;Île-de-France.

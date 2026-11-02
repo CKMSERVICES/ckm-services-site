@@ -32,7 +32,7 @@ export function generateMetadata({
   if (!location) return {};
 
   const title = `Nettoyage de Bureaux à ${location.name} (${location.zip})`;
-  const description = `Entretien de bureaux, commerces et locaux professionnels à ${location.name}. Devis gratuit sous 48h, sans engagement long, produits écologiques certifiés.`;
+  const description = `Entretien de bureaux, commerces et locaux professionnels à ${location.name}. Devis gratuit sous 24h, sans engagement long, produits écologiques certifiés.`;
 
   return {
     title,
@@ -80,7 +80,11 @@ export default function VillePage({ params }: { params: { ville: string } }) {
       question: `Intervenez-vous vraiment à ${location.name} ?`,
       answer: `Oui, ${location.name} fait partie de notre zone d'intervention régulière. Nous sommes basés à ${siteConfig.baseCity} (92), à proximité directe.`,
     },
-    ...faqs.slice(0, 3),
+    {
+      question: location.localFaqQuestion,
+      answer: location.localFaqAnswer,
+    },
+    ...faqs.slice(0, 2),
   ];
 
   return (
@@ -123,6 +127,28 @@ export default function VillePage({ params }: { params: { ville: string } }) {
           </div>
         </section>
 
+        <section className="bg-sapphire-50/40 py-16">
+          <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+            <span className="eyebrow-dark">Ancrage Local</span>
+            <h2 className="section-heading-dark mt-5">
+              {location.name}, Secteur par Secteur.
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-600">
+              {location.focus}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {location.quartiers.map((quartier) => (
+                <span
+                  key={quartier}
+                  className="rounded-full border border-sapphire-200 bg-white px-4 py-2 text-sm font-medium text-sapphire-700 shadow-soft"
+                >
+                  {quartier}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-white py-20">
           <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <ScrollReveal className="mx-auto max-w-2xl text-center">
@@ -157,7 +183,7 @@ export default function VillePage({ params }: { params: { ville: string } }) {
               <div className="mt-16 flex flex-col items-center gap-3 rounded-2xl bg-sapphire-50/70 px-6 py-8 text-center">
                 <Clock className="h-6 w-6 text-sapphire-700" aria-hidden="true" />
                 <p className="text-lg font-semibold text-sapphire-900">
-                  Devis gratuit sous 48h, sans engagement long
+                  Devis gratuit sous 24h, sans engagement long
                 </p>
                 <p className="max-w-xl text-sm text-slate-600">
                   Décrivez votre local à {location.name} par téléphone, WhatsApp
@@ -186,7 +212,7 @@ export default function VillePage({ params }: { params: { ville: string } }) {
             <ScrollReveal>
               <div className="mt-16 rounded-2xl bg-sapphire-gradient p-8 text-center shadow-soft sm:p-10">
                 <h2 className="text-balance text-2xl font-semibold text-white sm:text-3xl">
-                  Un devis gratuit et personnalisé sous 48h
+                  Un devis gratuit et personnalisé sous 24h
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-balance text-white/80">
                   Pour votre local à {location.name}, sans engagement.

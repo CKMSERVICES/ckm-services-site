@@ -137,7 +137,7 @@ export default function ContactForm() {
             Prêt pour un Espace Impeccable ? Obtenez Votre Devis Gratuit !
           </h2>
           <p className="mt-5 text-lg text-white/80">
-            Parlez-nous de votre site et recevez un devis clair sous 48h —
+            Parlez-nous de votre site et recevez un devis clair sous 24h —
             gratuit, sans surprise.
           </p>
         </ScrollReveal>

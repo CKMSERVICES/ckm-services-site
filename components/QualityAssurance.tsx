@@ -8,6 +8,7 @@ BadgeCheck,
 ClipboardCheck,
 Users,
 ThumbsUp,
+Camera,
 type LucideIcon,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
@@ -20,6 +21,7 @@ BadgeCheck,
 ClipboardCheck,
 Users,
 ThumbsUp,
+Camera,
 };
 
 export default function QualityAssurance() {

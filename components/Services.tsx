@@ -6,6 +6,8 @@ import {
   AppWindow,
   ClipboardCheck,
   HardHat,
+  Droplets,
+  Wind,
   ShieldCheck,
   ArrowUpRight,
   type LucideIcon,
@@ -20,6 +22,8 @@ const iconMap: Record<string, LucideIcon> = {
   AppWindow,
   ClipboardCheck,
   HardHat,
+  Droplets,
+  Wind,
   ShieldCheck,
 };
 

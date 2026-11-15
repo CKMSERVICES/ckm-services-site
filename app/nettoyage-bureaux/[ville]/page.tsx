@@ -10,6 +10,8 @@ import {
   AppWindow,
   ClipboardCheck,
   HardHat,
+Droplets,
+Wind,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,7 +19,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { siteConfig, services, faqs } from "@/lib/constants";
 import { locations, getLocation } from "@/lib/locations";
 
-const iconMap = { Building2, Sparkles, AppWindow, ClipboardCheck, HardHat };
+const iconMap = { Building2, Sparkles, AppWindow, ClipboardCheck, HardHat, Droplets, Wind };
 
 export function generateStaticParams() {
   return locations.map((location) => ({ ville: location.slug }));
@@ -159,7 +161,7 @@ export default function VillePage({ params }: { params: { ville: string } }) {
             </ScrollReveal>
 
             <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {services.slice(0, 6).map((service, index) => {
+              {services.map((service, index) => {
                 const Icon = iconMap[service.icon as keyof typeof iconMap] ?? Sparkles;
                 return (
                   <ScrollReveal key={service.slug} delay={(index % 3) * 0.1}>

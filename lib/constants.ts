@@ -71,6 +71,20 @@ description:
 "Gravats évacués, poussière éliminée : un chantier transformé en espace prêt à l'emploi.",
 },
 {
+slug: "nettoyage-textiles-moquettes",
+title: "Textiles & Moquettes",
+icon: "Droplets",
+description:
+"Moquettes, fauteuils d'accueil et canapés remis à neuf par shampouinage et nettoyage vapeur, sans rien décrocher.",
+},
+{
+slug: "nettoyage-exterieur-terrasses",
+title: "Extérieur & Terrasses",
+icon: "Wind",
+description:
+"Terrasses, entrées et parkings débarrassés des mousses et traces grâce à un nettoyage haute pression.",
+},
+{
 slug: "autres-besoins",
 title: "Autres Besoins",
 icon: "Sparkles",

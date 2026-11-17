@@ -100,6 +100,21 @@ export default function RootLayout({
     <html lang="fr" className={`${manrope.variable} ${outfit.variable}`}>
       <head>
         <script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TCEXQ0LMNV"
+          async
+        ></script>
+        <script
+          id="ga4-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-TCEXQ0LMNV');
+            `,
+          }}
+        />
+        <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
